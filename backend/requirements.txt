@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+pydantic>=2
+langchain-openai
+pypdf
+python-docx
+rapidfuzz
+pytest
+httpx
+openpyxl

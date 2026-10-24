@@ -1,0 +1,113 @@
+{
+  "_warning": "PLACEHOLDER written by Claude from JD text. Levels are GUESSES. Replace with the real talent_check_company_skillsets.json from the facilitator; the real file's shape may differ -> adapt the loader.",
+  "roles": [
+    {
+      "company": "Google LLC",
+      "role": "Software Engineer",
+      "levels": {
+        "DSA": 9,
+        "COD": 8,
+        "OS": 6,
+        "NETW": 6,
+        "OOD": 6,
+        "SYSD": 7,
+        "SWE": 7,
+        "COMM": 6,
+        "SQL": 3,
+        "AI": 1,
+        "CLOUD": 3,
+        "APTI": 5
+      }
+    },
+    {
+      "company": "Google LLC",
+      "role": "Data Scientist",
+      "levels": {
+        "SQL": 8,
+        "AI": 8,
+        "APTI": 8,
+        "COMM": 7,
+        "COD": 5,
+        "DSA": 4,
+        "SWE": 4,
+        "OOD": 2,
+        "OS": 1,
+        "NETW": 1,
+        "SYSD": 3,
+        "CLOUD": 3
+      }
+    },
+    {
+      "company": "Microsoft Corporation",
+      "role": "Software Engineer",
+      "levels": {
+        "DSA": 8,
+        "COD": 8,
+        "OS": 6,
+        "NETW": 5,
+        "OOD": 7,
+        "SYSD": 6,
+        "SWE": 7,
+        "COMM": 6,
+        "CLOUD": 4,
+        "SQL": 3,
+        "AI": 1,
+        "APTI": 5
+      }
+    },
+    {
+      "company": "Microsoft Corporation",
+      "role": "Data Analyst",
+      "levels": {
+        "SQL": 8,
+        "APTI": 7,
+        "AI": 5,
+        "COMM": 8,
+        "COD": 4,
+        "DSA": 3,
+        "SWE": 3,
+        "OOD": 1,
+        "OS": 1,
+        "NETW": 1,
+        "SYSD": 2,
+        "CLOUD": 2
+      }
+    },
+    {
+      "company": "Oracle Financial Services Software",
+      "role": "Associate Software Engineer",
+      "levels": {
+        "COD": 6,
+        "SQL": 5,
+        "DSA": 5,
+        "OOD": 6,
+        "OS": 4,
+        "APTI": 7,
+        "COMM": 6,
+        "SWE": 5,
+        "NETW": 2,
+        "SYSD": 2,
+        "CLOUD": 1,
+        "AI": 1
+      }
+    },
+    {
+      "company": "Oracle Financial Services Software",
+      "role": "Application Support Analyst",
+      "levels": {
+        "SQL": 4,
+        "OS": 4,
+        "NETW": 4,
+        "APTI": 6,
+        "COMM": 7,
+        "COD": 2,
+        "DSA": 2,
+        "SWE": 3,
+        "OOD": 1,
+        "SYSD": 1,
+        "CLOUD": 2,
+        "AI": 1
+      }
+    }
+  ]
+}

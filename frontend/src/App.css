@@ -1,0 +1,157 @@
+/* ===== RADIX Talent Match — Global + TalentCheck styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0a0e1a;
+  --surface:  #0f172a;
+  --card:     #1a2236;
+  --border:   #1e293b;
+  --text:     #e2e8f0;
+  --muted:    #94a3b8;
+  --primary:  #6366f1;
+  --accent:   #06b6d4;
+  --danger:   #f97316;
+  --success:  #10b981;
+  --radius:   12px;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── Nav ── */
+.app-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 60px;
+  background: rgba(15,23,42,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-brand { font-weight: 700; font-size: 1.05rem; color: var(--primary); letter-spacing: -0.3px; }
+.nav-links { display: flex; gap: 1rem; }
+.nav-link {
+  color: var(--muted); text-decoration: none; font-size: 0.9rem;
+  padding: 0.35rem 0.8rem; border-radius: 6px;
+  transition: all 0.2s;
+}
+.nav-link:hover, .nav-link.active { color: var(--text); background: var(--border); }
+
+/* ── TalentCheck page layout ── */
+.tc-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+.tc-header { text-align: center; margin-bottom: 2.5rem; }
+.tc-header h1 {
+  font-size: 2.2rem; font-weight: 700; letter-spacing: -1px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.tc-subtitle { color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem; }
+
+/* ── Selector row ── */
+.tc-selectors {
+  display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem;
+}
+.sel-group { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; min-width: 180px; }
+.sel-group label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.sel-group select {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text); padding: 0.55rem 0.8rem; font-size: 0.9rem;
+  outline: none; cursor: pointer; font-family: inherit;
+  transition: border-color 0.2s;
+}
+.sel-group select:focus { border-color: var(--primary); }
+
+.run-btn {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff; border: none; border-radius: 8px;
+  padding: 0.65rem 1.8rem; font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; transition: opacity 0.2s, transform 0.1s;
+  white-space: nowrap; align-self: flex-end;
+}
+.run-btn:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.run-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Error + placeholder ── */
+.tc-error {
+  background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3);
+  color: #fca5a5; border-radius: var(--radius); padding: 1rem 1.5rem; margin-bottom: 1.5rem;
+}
+.tc-placeholder {
+  text-align: center; color: var(--muted); padding: 4rem 2rem;
+  border: 2px dashed var(--border); border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+/* ── Results ── */
+.tc-results { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.results-top {
+  display: flex; align-items: center; gap: 2rem;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem 2rem;
+}
+.dial-wrapper { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+.dial-label { font-size: 0.85rem; font-weight: 600; }
+.results-meta h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+.meta-pill {
+  display: inline-block; background: var(--border); border-radius: 20px;
+  padding: 0.25rem 0.9rem; font-size: 0.8rem; color: var(--muted); margin-right: 0.5rem;
+}
+.role-pill { color: var(--accent); }
+
+/* ── Scoring panel ── */
+.scoring-panel { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.explain-btn {
+  width: 100%; text-align: left; padding: 0.9rem 1.5rem;
+  background: none; border: none; color: var(--accent);
+  font-size: 0.88rem; font-weight: 600; cursor: pointer;
+  transition: background 0.15s;
+}
+.explain-btn:hover { background: var(--border); }
+.explain-body { padding: 0 1.5rem 1.25rem; }
+.formula { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-bottom: 1rem; line-height: 1.7; }
+.explain-body h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.6rem; }
+.explain-body ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.explain-body li { font-size: 0.82rem; color: var(--muted); }
+.explain-body li strong { color: var(--text); }
+
+/* ── Two-col charts ── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
+
+.chart-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem 1.25rem 1rem;
+}
+.chart-card h3 { font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 1rem; }
+
+/* ── Gap table ── */
+.gap-table-wrapper {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem 1.5rem; overflow-x: auto;
+}
+.gap-table-wrapper h3 { font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 1rem; }
+.gap-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.gap-table th {
+  text-align: left; padding: 0.5rem 0.75rem;
+  color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+.gap-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid rgba(30,41,59,0.6); vertical-align: middle; }
+.gap-table .num { text-align: center; font-variant-numeric: tabular-nums; font-weight: 600; }
+.row-gap td:first-child { color: var(--danger); font-weight: 500; }
+.row-ok  td:first-child { color: var(--success); }
+.bar-fill { height: 6px; border-radius: 3px; min-width: 2px; transition: width 0.5s ease; }

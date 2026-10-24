@@ -1,0 +1,34 @@
+{
+  "source_type": "resume",
+  "source_file": "Priya Menon.docx",
+  "company": null,
+  "role": null,
+  "skills": [
+    {
+      "skill_name": "Python",
+      "category_code": "COD",
+      "evidence": "3+ years of Python",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Data Structures",
+      "category_code": "DSA",
+      "evidence": "strong DSA fundamentals",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "SQL",
+      "category_code": "SQL",
+      "evidence": "write complex queries",
+      "confidence": "medium",
+      "importance": "preferred"
+    }
+  ],
+  "extras": {
+    "education": "B.Tech CSE",
+    "projects": [],
+    "experience": []
+  }
+}

@@ -155,3 +155,20 @@ body {
 .row-gap td:first-child { color: var(--danger); font-weight: 500; }
 .row-ok  td:first-child { color: var(--success); }
 .bar-fill { height: 6px; border-radius: 3px; min-width: 2px; transition: width 0.5s ease; }
+
+/* Badge shown when a category has no resume evidence */
+.not-assessable {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #64748b;
+  background: rgba(100,116,139,0.12);
+  border: 1px solid rgba(100,116,139,0.25);
+  border-radius: 10px;
+  padding: 0.1rem 0.5rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.na-dash { color: #475569; font-weight: 600; }
+

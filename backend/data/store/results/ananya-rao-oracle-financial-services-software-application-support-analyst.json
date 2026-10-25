@@ -1,0 +1,129 @@
+{
+  "company": "Oracle Financial Services Software",
+  "candidate_id": "ananya-rao",
+  "skillset_gap": [
+    {
+      "category_code": "DSA",
+      "required_level": 1,
+      "candidate_level": 7,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "1 skill(s): Data Structures & Algorithms(high) -> base 7 + bonus 0 = 7",
+      "company_aggregate_level": 6,
+      "role_weight": 0.2
+    },
+    {
+      "category_code": "COD",
+      "required_level": 1,
+      "candidate_level": 9,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "3 skill(s): C++(high), Java(high), Python(medium) -> base 7 + bonus 2 = 9",
+      "company_aggregate_level": 5,
+      "role_weight": 0.2
+    },
+    {
+      "category_code": "OOD",
+      "required_level": 1,
+      "candidate_level": 7,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "1 skill(s): Object-Oriented Design(high) -> base 7 + bonus 0 = 7",
+      "company_aggregate_level": 6,
+      "role_weight": 0.1
+    },
+    {
+      "category_code": "APTI",
+      "required_level": 4,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 4,
+      "explanation": "no evidence",
+      "company_aggregate_level": 6,
+      "role_weight": 0.6
+    },
+    {
+      "category_code": "COMM",
+      "required_level": 5,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 5,
+      "explanation": "no evidence",
+      "company_aggregate_level": 6,
+      "role_weight": 0.85
+    },
+    {
+      "category_code": "AI",
+      "required_level": 1,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 1,
+      "explanation": "no evidence",
+      "company_aggregate_level": 6,
+      "role_weight": 0.1
+    },
+    {
+      "category_code": "CLOUD",
+      "required_level": 1,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 1,
+      "explanation": "no evidence",
+      "company_aggregate_level": 5,
+      "role_weight": 0.2
+    },
+    {
+      "category_code": "SQL",
+      "required_level": 3,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 3,
+      "explanation": "no evidence",
+      "company_aggregate_level": 6,
+      "role_weight": 0.5
+    },
+    {
+      "category_code": "SWE",
+      "required_level": 2,
+      "candidate_level": 8,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "2 skill(s): Production backend engineering(high), Git(medium) -> base 7 + bonus 1 = 8",
+      "company_aggregate_level": 7,
+      "role_weight": 0.3
+    },
+    {
+      "category_code": "SYSD",
+      "required_level": 1,
+      "candidate_level": 7,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "1 skill(s): Distributed systems design(high) -> base 7 + bonus 0 = 7",
+      "company_aggregate_level": 5,
+      "role_weight": 0.1
+    },
+    {
+      "category_code": "NETW",
+      "required_level": 2,
+      "candidate_level": 5,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "1 skill(s): Computer Networks(medium) -> base 5 + bonus 0 = 5",
+      "company_aggregate_level": 5,
+      "role_weight": 0.5
+    },
+    {
+      "category_code": "OS",
+      "required_level": 2,
+      "candidate_level": 8,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "2 skill(s): Operating Systems(high), Linux(medium) -> base 7 + bonus 1 = 8",
+      "company_aggregate_level": 5,
+      "role_weight": 0.5
+    }
+  ],
+  "readiness_score": 42,
+  "scoring_method": "readiness = round(100 x sum(min(candidate_level, required_level)) / sum(required_level)) over the 12 skillsets. candidate_level: strongest skill in category (high=7, med=5, low=3) + 1 per additional skill in same category (max +3 bonus), capped at 10. required_level = round(company_aggregate x role_weight); role weights emphasise COD/DSA/OS for SWE and AI/SQL/COMM for Data Scientist.",
+  "data_source": "supabase"
+}

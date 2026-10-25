@@ -17,17 +17,19 @@ Endpoints (prefix /api/talent-check):
       Powers the multi-candidate comparison bar chart in the UI.
 """
 
+import re
+
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
 
-from app import mocks
 from app.core import storage
 from app.schemas import CandidateProfile, TalentCheckResult
 from app.talent_check.scoring import (
     find_level_entry,
+    find_full_entry,
     get_companies,
     get_roles_for_company,
-    load_company_levels,
+    load_company_levels_with_source,
     score,
 )
 
@@ -38,7 +40,7 @@ router = APIRouter(prefix="/api/talent-check", tags=["talent-check"])
 # Helper: load company levels once per request (cheap — reads local JSON/storage)
 # ---------------------------------------------------------------------------
 def _levels():
-    return load_company_levels()
+    return load_company_levels_with_source()
 
 
 # ---------------------------------------------------------------------------
@@ -50,10 +52,46 @@ def list_companies():
     Return all companies and their available roles.
     The frontend uses this to populate the company picker + role dropdown.
     """
-    levels = _levels()
+    levels, data_source = _levels()
     companies = get_companies(levels)
     roles_by_company = {c: get_roles_for_company(c, levels) for c in companies}
     return {"companies": companies, "roles_by_company": roles_by_company}
+
+
+# ---------------------------------------------------------------------------
+# GET /api/talent-check/candidates
+# ---------------------------------------------------------------------------
+@router.get("/candidates")
+def list_candidates():
+    """
+    Return all saved candidate profiles as [{id, name}].
+
+    Reads storage.list_keys('profiles') and loads the 'name' field from each.
+    The frontend uses this to populate its candidate picker dynamically,
+    so new profiles added by Role 3 appear without any frontend code change.
+
+    Keys beginning with '_test_' are silently excluded — they are only ever
+    written by test/verification scripts and must never reach the UI dropdown.
+
+    No new Pydantic model needed — the response is a plain list of dicts.
+    """
+    keys = storage.list_keys("profiles")
+    result = []
+    for key in keys:
+        # Skip internal test profiles injected by scripts (e.g. _test_no_name_profile).
+        # Real profiles written by Role 3 (Profile Builder) never use this prefix.
+        if key.startswith("_test_"):
+            continue
+        raw = storage.load("profiles", key)
+        if raw and isinstance(raw, dict):
+            result.append({
+                "id":   raw.get("candidate_id", key),   # slug, e.g. "ananya-rao"
+                "name": raw.get("name", key),            # display name, e.g. "Ananya Rao"
+            })
+    return result
+
+
+
 
 
 # ---------------------------------------------------------------------------
@@ -92,10 +130,10 @@ def run_talent_check(req: TalentCheckRequest) -> TalentCheckResult:
             detail=f"Stored profile is malformed: {e}",
         )
 
-    # --- 2. Look up company/role levels ---
-    levels = _levels()
-    company_levels = find_level_entry(req.company, req.role, levels)
-    if company_levels is None:
+    # --- 2. Look up company/role levels (full entry for aggregate + weights) ---
+    levels, data_source = _levels()
+    entry = find_full_entry(req.company, req.role, levels)
+    if entry is None:
         available = [
             f"{r['company']} / {r['role']}" for r in levels
         ]
@@ -105,12 +143,18 @@ def run_talent_check(req: TalentCheckRequest) -> TalentCheckResult:
                    f"Available: {available}",
         )
 
-    # --- 3. Score ---
-    result = score(profile, company_levels, req.company)
+    # --- 3. Score (pass aggregate + weights so UI can show provenance) ---
+    result = score(
+        profile,
+        entry["levels"],
+        req.company,
+        company_aggregates=entry.get("aggregate"),
+        role_weights_used=entry.get("weights_used"),
+        data_source=data_source,
+    )
 
     # --- 4. Persist result ---
     # Key: slugified candidate + company + role for uniqueness
-    import re
     result_key = re.sub(r"[^a-z0-9]+", "-", f"{req.candidate_id}-{req.company}-{req.role}".lower()).strip("-")
     storage.save("results", result_key, result)
 
@@ -127,9 +171,9 @@ def compare_candidates(company: str, role: str) -> list[TalentCheckResult]:
     Returns a list sorted by readiness_score descending.
     Powers the multi-candidate comparison bar chart on the frontend.
     """
-    levels = _levels()
-    company_levels = find_level_entry(company, role, levels)
-    if company_levels is None:
+    levels, data_source = _levels()
+    entry = find_full_entry(company, role, levels)
+    if entry is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Company '{company}' / role '{role}' not found.",
@@ -151,7 +195,14 @@ def compare_candidates(company: str, role: str) -> list[TalentCheckResult]:
             profile = CandidateProfile(**raw)
         except Exception:
             continue   # skip malformed profiles silently, don't crash the whole compare
-        results.append(score(profile, company_levels, company))
+        results.append(score(
+            profile,
+            entry["levels"],
+            company,
+            company_aggregates=entry.get("aggregate"),
+            role_weights_used=entry.get("weights_used"),
+            data_source=data_source,
+        ))
 
     results.sort(key=lambda r: r.readiness_score, reverse=True)
     return results

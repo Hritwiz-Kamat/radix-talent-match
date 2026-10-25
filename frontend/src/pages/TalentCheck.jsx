@@ -5,7 +5,8 @@ import {
   ResponsiveContainer, Cell,
 } from "recharts";
 
-const API = "http://localhost:8000";
+const API = ""; // Vite dev proxy forwards /api/* to http://localhost:8000
+
 
 // Human-readable labels for the 12 category codes
 const CATEGORY_LABELS = {
@@ -23,13 +24,6 @@ const CATEGORY_LABELS = {
   OS:   "Operating Systems",
 };
 
-// Candidate slugs and display names (pre-seeded by the SM)
-const CANDIDATES = [
-  { id: "ananya-rao",          name: "Ananya Rao" },
-  { id: "karthik-subramaniam", name: "Karthik Subramaniam" },
-  { id: "priya-menon",         name: "Priya Menon" },
-  { id: "rohan-verma",         name: "Rohan Verma" },
-];
 
 // Colour palette (cool blues / purples for radar + a vibrant orange for gaps)
 const COLORS = {
@@ -95,8 +89,19 @@ function GapTable({ gaps }) {
         <tbody>
           {sorted.map((g) => (
             <tr key={g.category_code} className={g.gap ? "row-gap" : "row-ok"}>
-              <td>{CATEGORY_LABELS[g.category_code] ?? g.category_code}</td>
-              <td className="num">{g.candidate_level}</td>
+              <td>
+                {CATEGORY_LABELS[g.category_code] ?? g.category_code}
+                {g.candidate_level === 0 && g.explanation === "no evidence" && (
+                  <span className="not-assessable" title="Resume contains no evidence for this category">
+                    Not assessable from resume
+                  </span>
+                )}
+              </td>
+              <td className="num">
+                {g.candidate_level === 0 && g.explanation === "no evidence"
+                  ? <span className="na-dash" title="No resume evidence">–</span>
+                  : g.candidate_level}
+              </td>
               <td className="num">{g.required_level}</td>
               <td className="num" style={{ color: g.gap_size > 0 ? COLORS.gap : "#10b981", fontWeight: 700 }}>
                 {g.gap_size > 0 ? `−${g.gap_size}` : "✓"}
@@ -111,6 +116,7 @@ function GapTable({ gaps }) {
                 />
               </td>
             </tr>
+
           ))}
         </tbody>
       </table>
@@ -144,9 +150,9 @@ function SkillRadar({ gaps }) {
 }
 
 // ── Compare bar chart ──────────────────────────────────────────────────────
-function CompareChart({ results }) {
+function CompareChart({ results, candidates }) {
   const data = results.map((r) => ({
-    name: CANDIDATES.find((c) => c.id === r.candidate_id)?.name ?? r.candidate_id,
+    name: candidates.find((c) => c.id === r.candidate_id)?.name ?? r.candidate_id,
     score: r.readiness_score,
   }));
 
@@ -202,23 +208,29 @@ function ScoringPanel({ method, gaps }) {
 // ── Main page ──────────────────────────────────────────────────────────────
 export default function TalentCheck() {
   const [companiesData, setCompaniesData] = useState(null);
+  const [candidates, setCandidates]       = useState([]);   // [{id, name}] — from /api/talent-check/candidates
   const [selectedCompany, setSelectedCompany] = useState("");
   const [selectedRole, setSelectedRole]    = useState("");
-  const [selectedCandidate, setSelectedCandidate] = useState(CANDIDATES[0].id);
+  const [selectedCandidate, setSelectedCandidate] = useState("");
   const [result, setResult]   = useState(null);
   const [compare, setCompare] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError]     = useState(null);
 
-  // Fetch company list on mount
+  // Fetch companies AND candidates on mount (two fast reads, parallel)
   useEffect(() => {
-    fetch(`${API}/api/talent-check/companies`)
-      .then((r) => r.json())
-      .then((d) => {
-        setCompaniesData(d);
-        const first = d.companies?.[0] ?? "";
+    Promise.all([
+      fetch(`${API}/api/talent-check/companies`).then((r) => r.json()),
+      fetch(`${API}/api/talent-check/candidates`).then((r) => r.json()),
+    ])
+      .then(([companiesJson, candidatesJson]) => {
+        setCompaniesData(companiesJson);
+        const first = companiesJson.companies?.[0] ?? "";
         setSelectedCompany(first);
-        setSelectedRole(d.roles_by_company?.[first]?.[0] ?? "");
+        setSelectedRole(companiesJson.roles_by_company?.[first]?.[0] ?? "");
+        setCandidates(candidatesJson);
+        // Default to the first candidate returned by the API
+        if (candidatesJson.length > 0) setSelectedCandidate(candidatesJson[0].id);
       })
       .catch(() => setError("Cannot reach backend. Is the server running on :8000?"));
   }, []);
@@ -309,7 +321,7 @@ export default function TalentCheck() {
             value={selectedCandidate}
             onChange={(e) => setSelectedCandidate(e.target.value)}
           >
-            {CANDIDATES.map((c) => (
+            {candidates.map((c) => (
               <option key={c.id} value={c.id}>{c.name}</option>
             ))}
           </select>
@@ -333,7 +345,7 @@ export default function TalentCheck() {
           <div className="results-top">
             <ReadinessDial score={result.readiness_score} />
             <div className="results-meta">
-              <h2>{CANDIDATES.find((c) => c.id === result.candidate_id)?.name ?? result.candidate_id}</h2>
+              <h2>{candidates.find((c) => c.id === result.candidate_id)?.name ?? result.candidate_id}</h2>
               <div className="meta-pill">{result.company}</div>
               <div className="meta-pill role-pill">{selectedRole}</div>
             </div>
@@ -343,7 +355,7 @@ export default function TalentCheck() {
 
           <div className="two-col">
             <SkillRadar gaps={result.skillset_gap} />
-            {compare && <CompareChart results={compare} />}
+            {compare && <CompareChart results={compare} candidates={candidates} />}
           </div>
 
           <GapTable gaps={result.skillset_gap} />

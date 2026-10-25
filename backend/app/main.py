@@ -1,11 +1,24 @@
 import importlib
+import logging
+from contextlib import asynccontextmanager
 
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
-app = FastAPI(title="RADIX Talent Match")
+log = logging.getLogger("uvicorn.error")
+
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    from app.talent_check.scoring import load_company_levels_with_source
+    levels, source = load_company_levels_with_source()
+    log.info("Talent Check company skillsets loaded from %s (%d entries)", source, len(levels))
+    yield
+
+
+app = FastAPI(title="RADIX Talent Match", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173"],
                    allow_methods=["*"], allow_headers=["*"])
 

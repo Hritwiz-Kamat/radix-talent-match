@@ -9,6 +9,8 @@ Rules:
 
 Changelog:
   v1.0  initial lock
+  v1.1  SkillsetGap: added company_aggregate_level and role_weight (Optional, additive, Role 4 only)
+  v1.2  TalentCheckResult: added data_source (Optional[str]; values: supabase|json|csv|placeholder)
 """
 from __future__ import annotations
 
@@ -102,6 +104,9 @@ class SkillsetGap(BaseModel):
     gap: bool
     gap_size: int = Field(default=0, ge=0, le=10)                 # ADDED
     explanation: Optional[str] = None                             # ADDED: why this level
+    # ADDED v1.1 (Role 4 only, additive — contract fields above are unchanged)
+    company_aggregate_level: Optional[int] = None  # raw CSV value before role weighting
+    role_weight: Optional[float] = None            # fraction applied to aggregate -> required_level
 
 
 class TalentCheckResult(BaseModel):
@@ -111,6 +116,9 @@ class TalentCheckResult(BaseModel):
     skillset_gap: list[SkillsetGap]
     readiness_score: int = Field(ge=0, le=100)
     scoring_method: Optional[str] = None                          # ADDED: one-line formula, shown in UI
+    # ADDED v1.2 (Role 4 only, additive) — "supabase"|"json"|"csv"|"placeholder"
+    data_source: Optional[str] = None
+
 
 
 class MatchedSkill(BaseModel):

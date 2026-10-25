@@ -74,7 +74,8 @@ def save(kind: str, key: str, obj) -> None:
             _fail(f"save {kind}/{key} failed", e)
 
 
-def load(kind: str, key: str):
+def load_with_source(kind: str, key: str) -> tuple[object | None, str | None]:
+    """Load a document and report whether it came from Supabase or the local JSON mirror."""
     key = _slug(key)
     if supabase_enabled():
         try:
@@ -84,11 +85,15 @@ def load(kind: str, key: str):
                 r.raise_for_status()
                 rows = r.json()
                 if rows:
-                    return rows[0]["data"]
+                    return rows[0]["data"], "supabase"
         except Exception as e:
             _fail(f"load {kind}/{key} failed", e)
     f = ROOT / kind / f"{key}.json"
-    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else None
+    return (json.loads(f.read_text(encoding="utf-8")), "json") if f.exists() else (None, None)
+
+
+def load(kind: str, key: str):
+    return load_with_source(kind, key)[0]
 
 
 def list_keys(kind: str) -> list[str]:

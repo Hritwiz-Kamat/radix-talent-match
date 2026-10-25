@@ -6,3 +6,8 @@ node_modules/
 
 # Uploaded CV files
 backend/data/store/files/cv/
+# Environment secrets
+.env
+.env.*
+!.env.example
+backend/.env

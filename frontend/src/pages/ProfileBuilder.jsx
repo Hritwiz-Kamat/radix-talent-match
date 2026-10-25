@@ -407,11 +407,32 @@ export default function ProfileBuilder() {
         </p>
       )}
 
-      {message && (
-        <p role="status" style={{ color: "#15803d", marginBottom: 16 }}>
-          {message}
-        </p>
-      )}
+      
+{message && (
+  <div
+    role="status"
+    style={{
+      position: "fixed",
+      top: 24,
+      right: 24,
+      zIndex: 1000,
+      background: "#166534",
+      color: "#ffffff",
+      padding: "14px 20px",
+      borderRadius: 10,
+      boxShadow: "0 8px 24px rgba(0,0,0,0.18)",
+      display: "flex",
+      alignItems: "center",
+      gap: 10,
+      fontSize: 14,
+      fontWeight: 600,
+    }}
+  >
+    <span>✓</span>
+    {message}
+  </div>
+)}
+
 
       <div style={cardStyle}>
         <label htmlFor="candidate-picker" style={labelStyle}>

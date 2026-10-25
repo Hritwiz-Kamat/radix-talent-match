@@ -3,3 +3,6 @@ __pycache__/
 .venv/
 node_modules/
 .pytest_cache/
+
+# Uploaded CV files
+backend/data/store/files/cv/

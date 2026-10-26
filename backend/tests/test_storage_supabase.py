@@ -36,6 +36,7 @@ def test_save_writes_to_supabase_and_mirror(tmp_path):
     assert DB[("profiles", "test-person")] == {"name": "T"}
     assert (tmp_path / "profiles" / "test-person.json").exists()
     assert storage.load("profiles", "test-person") == {"name": "T"}
+    assert storage.load_with_source("profiles", "test-person") == ({"name": "T"}, "supabase")
     assert "test-person" in storage.list_keys("profiles")
 
 
@@ -44,6 +45,7 @@ def test_falls_back_to_local_when_supabase_down(monkeypatch):
     def boom(_): raise httpx.ConnectError("down")
     monkeypatch.setattr(storage, "_client", lambda: httpx.Client(transport=httpx.MockTransport(boom)))
     assert storage.load("profiles", "a") == {"v": 1}      # served from the local mirror
+    assert storage.load_with_source("profiles", "a") == ({"v": 1}, "json")
 
 
 def test_strict_mode_raises(monkeypatch):

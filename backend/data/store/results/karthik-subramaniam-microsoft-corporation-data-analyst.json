@@ -1,0 +1,104 @@
+{
+  "company": "Microsoft Corporation",
+  "candidate_id": "karthik-subramaniam",
+  "skillset_gap": [
+    {
+      "category_code": "DSA",
+      "required_level": 3,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 3,
+      "explanation": "no evidence"
+    },
+    {
+      "category_code": "COD",
+      "required_level": 4,
+      "candidate_level": 8,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "2 skill(s): Python (pandas, scikit-learn)(high), Java(low) -> base 7 + bonus 1 = 8"
+    },
+    {
+      "category_code": "OOD",
+      "required_level": 1,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 1,
+      "explanation": "no evidence"
+    },
+    {
+      "category_code": "APTI",
+      "required_level": 7,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 7,
+      "explanation": "no evidence"
+    },
+    {
+      "category_code": "COMM",
+      "required_level": 8,
+      "candidate_level": 7,
+      "gap": true,
+      "gap_size": 1,
+      "explanation": "1 skill(s): Presenting to non-technical audiences(high) -> base 7 + bonus 0 = 7"
+    },
+    {
+      "category_code": "AI",
+      "required_level": 5,
+      "candidate_level": 10,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "4 skill(s): Machine learning (logistic regression)(high), Statistics(high), A/B testing(medium), Anomaly detection(medium) -> base 7 + bonus 3 = 10"
+    },
+    {
+      "category_code": "CLOUD",
+      "required_level": 2,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 2,
+      "explanation": "no evidence"
+    },
+    {
+      "category_code": "SQL",
+      "required_level": 8,
+      "candidate_level": 8,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "2 skill(s): SQL(high), Database schema design(high) -> base 7 + bonus 1 = 8"
+    },
+    {
+      "category_code": "SWE",
+      "required_level": 3,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 3,
+      "explanation": "no evidence"
+    },
+    {
+      "category_code": "SYSD",
+      "required_level": 2,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 2,
+      "explanation": "no evidence"
+    },
+    {
+      "category_code": "NETW",
+      "required_level": 1,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 1,
+      "explanation": "no evidence"
+    },
+    {
+      "category_code": "OS",
+      "required_level": 1,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 1,
+      "explanation": "no evidence"
+    }
+  ],
+  "readiness_score": 53,
+  "scoring_method": "readiness = round(100 × Σ min(candidate_level, required_level) / Σ required_level) over the 12 skillsets. candidate_level: strongest skill in category (high=7, med=5, low=3) + 1 per additional skill in same category (max +3 bonus), capped at 10."
+}

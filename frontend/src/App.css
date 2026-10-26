@@ -1,0 +1,126 @@
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+.sidebar {
+  width: 245px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 16px 18px;
+  background: #111827;
+  color: #e5e7eb;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px 32px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #6366f1;
+  color: white;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.brand h2 {
+  margin: 0;
+  letter-spacing: 3px;
+  font-size: 19px;
+}
+
+.brand p {
+  margin: 3px 0 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.nav-heading {
+  margin: 0 10px 12px;
+  color: #9ca3af;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 7px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 12px;
+  border-radius: 9px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  background: #273449;
+  color: white;
+}
+
+.nav-link.active {
+  background: #4f46e5;
+  color: white;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 18px 10px 0;
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.main-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.topbar {
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  color: #475569;
+  font-size: 13px;
+}
+
+.page {
+  padding: 32px;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 180px;
+    padding: 20px 10px;
+  }
+
+  .topbar {
+    padding: 0 15px;
+  }
+}

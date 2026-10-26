@@ -13,3 +13,6 @@ __pycache__/
 
 # Node
 node_modules/
+
+# Uploaded CV files
+backend/data/store/files/cv/

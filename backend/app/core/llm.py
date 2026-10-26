@@ -8,9 +8,9 @@ import os
 import time
 
 DEFAULT_MODELS = [  # [Guessing] these ids may be stale. Replace via .env.
-    "meta-llama/llama-3.3-70b-instruct:free",
-    "deepseek/deepseek-chat-v3-0324:free",
-    "qwen/qwen-2.5-72b-instruct:free",
+    "google/gemini-2.0-flash-lite-preview-02-05:free",
+    "meta-llama/llama-3.2-3b-instruct:free",
+    "mistralai/mistral-nemo:free",
 ]
 
 

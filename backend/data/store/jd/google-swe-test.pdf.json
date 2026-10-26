@@ -1,0 +1,30 @@
+{
+  "source_type": "jd",
+  "source_file": "google-swe-test.pdf",
+  "company": "Google LLC",
+  "role": "Software Engineer",
+  "skills": [
+    {
+      "skill_name": "Python",
+      "category_code": "COD",
+      "evidence": "ev",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "C++",
+      "category_code": "COD",
+      "evidence": "ev",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Kubernetes",
+      "category_code": "CLOUD",
+      "evidence": "ev",
+      "confidence": "high",
+      "importance": "preferred"
+    }
+  ],
+  "extras": {}
+}

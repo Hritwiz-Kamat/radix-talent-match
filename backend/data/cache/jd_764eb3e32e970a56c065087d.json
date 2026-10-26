@@ -1,0 +1,121 @@
+{
+  "source_type": "jd",
+  "source_file": "Google LLC - Software Engineer.pdf",
+  "company": null,
+  "role": null,
+  "skills": [
+    {
+      "skill_name": "Data Structures and Algorithms",
+      "category_code": "DSA",
+      "evidence": "Strong grasp of data structures and algorithms and ability to reason about time and space complexity under pressure",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "General Coding Ability",
+      "category_code": "COD",
+      "evidence": "Hands-on programming ability to turn a problem statement into working, efficient code quickly",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Backend Services and APIs",
+      "category_code": "SWE",
+      "evidence": "Design and implement backend services and APIs that operate reliably at Google scale",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "System Design and Distributed Systems",
+      "category_code": "SYSD",
+      "evidence": "Design large-scale distributed systems and reason about system design at scale, such as sketching a URL shortener or file storage service",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Code Quality and Code Review",
+      "category_code": "SWE",
+      "evidence": "Write clean, well-tested, maintainable code and participate in code review",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Testing Strategy",
+      "category_code": "SWE",
+      "evidence": "Solid software engineering fundamentals including testing strategy",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "CI/CD",
+      "category_code": "CLOUD",
+      "evidence": "Basic CI/CD concepts",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Operating Systems",
+      "category_code": "OS",
+      "evidence": "Working knowledge of operating systems fundamentals such as processes, threads, and virtual memory",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Networking",
+      "category_code": "NETW",
+      "evidence": "Core networking concepts such as TCP/UDP, HTTP, and how a web request travels",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Object-Oriented Design",
+      "category_code": "OOD",
+      "evidence": "Experience or coursework in object-oriented design and common design patterns with focus on extensible maintainable architecture",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Communication",
+      "category_code": "COMM",
+      "evidence": "Clear written and verbal communication to explain technical tradeoffs to engineers and non-engineers alike",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Collaboration and Teamwork",
+      "category_code": "COMM",
+      "evidence": "Collaborate closely with cross-functional partners across product, design, and SRE",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Performance and Reliability Troubleshooting",
+      "category_code": "SWE",
+      "evidence": "Diagnose and resolve performance and reliability issues in production",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Technical Debt Awareness",
+      "category_code": "SWE",
+      "evidence": "Awareness of technical debt",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Open-Source Contributions",
+      "category_code": "SWE",
+      "evidence": "Open-source contributions",
+      "confidence": "high",
+      "importance": "preferred"
+    },
+    {
+      "skill_name": "Production Distributed Systems Exposure",
+      "category_code": "SYSD",
+      "evidence": "Exposure to distributed systems in production",
+      "confidence": "high",
+      "importance": "preferred"
+    }
+  ],
+  "extras": {}
+}

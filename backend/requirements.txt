@@ -10,3 +10,4 @@ rapidfuzz
 pytest
 httpx
 openpyxl
+langchain-community

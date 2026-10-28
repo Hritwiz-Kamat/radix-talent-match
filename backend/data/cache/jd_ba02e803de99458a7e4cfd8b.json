@@ -1,0 +1,23 @@
+{
+  "source_type": "jd",
+  "source_file": "test.txt",
+  "company": null,
+  "role": null,
+  "skills": [
+    {
+      "skill_name": "Rust",
+      "category_code": "COD",
+      "evidence": "Rust and Docker required",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Docker",
+      "category_code": "CLOUD",
+      "evidence": "Rust and Docker required",
+      "confidence": "high",
+      "importance": "required"
+    }
+  ],
+  "extras": {}
+}

@@ -1,0 +1,51 @@
+{
+  "source_type": "jd",
+  "source_file": "Apex_JD.txt",
+  "company": null,
+  "role": "Apex_JD",
+  "skills": [
+    {
+      "skill_name": "Rust",
+      "category_code": "COD",
+      "evidence": "Required Skills: Rust, Go, Docker, Kubernetes, Distributed Systems, System Design, PostgreSQL",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Docker",
+      "category_code": "CLOUD",
+      "evidence": "Required Skills: Rust, Go, Docker, Kubernetes, Distributed Systems, System Design, PostgreSQL",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Kubernetes",
+      "category_code": "CLOUD",
+      "evidence": "Required Skills: Rust, Go, Docker, Kubernetes, Distributed Systems, System Design, PostgreSQL",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "PostgreSQL",
+      "category_code": "SQL",
+      "evidence": "Required Skills: Rust, Go, Docker, Kubernetes, Distributed Systems, System Design, PostgreSQL",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "System Design",
+      "category_code": "SYSD",
+      "evidence": "Required Skills: Rust, Go, Docker, Kubernetes, Distributed Systems, System Design, PostgreSQL",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Distributed Systems",
+      "category_code": "SYSD",
+      "evidence": "Required Skills: Rust, Go, Docker, Kubernetes, Distributed Systems, System Design, PostgreSQL",
+      "confidence": "high",
+      "importance": "required"
+    }
+  ],
+  "extras": {}
+}

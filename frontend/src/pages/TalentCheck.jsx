@@ -222,8 +222,10 @@ export default function TalentCheck() {
 
   // Sync selectedCandidate if AppContext provides currentCandidate
   useEffect(() => {
-    if (currentCandidate?.id && candidates.some((c) => c.id === currentCandidate.id)) {
-      setSelectedCandidate(currentCandidate.id);
+    const preferredCandidateId = currentCandidate?.candidate_id || currentCandidate?.id;
+    if (preferredCandidateId && candidates.some((c) => (c.candidate_id || c.id) === preferredCandidateId)) {
+      const cId = currentCandidate?.candidate_id || currentCandidate?.id;
+      setSelectedCandidate(cId);
     }
   }, [currentCandidate, candidates]);
 
@@ -240,7 +242,13 @@ export default function TalentCheck() {
         setSelectedRole(companiesJson.roles_by_company?.[first]?.[0] ?? "");
         setCandidates(candidatesJson);
         // Default to the first candidate returned by the API
-        if (candidatesJson.length > 0) setSelectedCandidate(candidatesJson[0].id);
+        const preferredCandidateId = currentCandidate?.candidate_id || currentCandidate?.id;
+        if (preferredCandidateId && candidatesJson.some((c) => (c.candidate_id || c.id) === preferredCandidateId)) {
+          setSelectedCandidate(preferredCandidateId);
+        } else if (candidatesJson.length > 0) {
+          const defaultCand = candidatesJson.find((c) => (c.candidate_id || c.id) === "sameer-singla") || candidatesJson[0];
+          setSelectedCandidate(defaultCand.candidate_id || defaultCand.id);
+        }
       })
       .catch(() => setError("Cannot reach backend. Is the server running on :8000?"));
   }, []);
@@ -331,9 +339,10 @@ export default function TalentCheck() {
             value={selectedCandidate}
             onChange={(e) => setSelectedCandidate(e.target.value)}
           >
-            {candidates.map((c) => (
-              <option key={c.id} value={c.id}>{c.name}</option>
-            ))}
+            {candidates.map((c) => {
+              const cid = c.candidate_id || c.id;
+              return <option key={cid} value={cid}>{c.name} ({cid})</option>;
+            })}
           </select>
         </div>
 

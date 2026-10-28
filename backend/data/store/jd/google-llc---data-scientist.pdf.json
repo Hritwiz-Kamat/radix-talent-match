@@ -1,0 +1,65 @@
+{
+  "source_type": "jd",
+  "source_file": "Google LLC - Data Scientist.pdf",
+  "company": "Google LLC",
+  "role": "Data Scientist",
+  "skills": [
+    {
+      "skill_name": "SQL",
+      "category_code": "SQL",
+      "evidence": "Write efficient, production-grade SQL against very large datasets, schema design and query optimization",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Quantitative and Analytical Reasoning",
+      "category_code": "APTI",
+      "evidence": "Solid quantitative and analytical reasoning, interpreting experiment results, probability",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "A/B Testing and Experimentation",
+      "category_code": "AI",
+      "evidence": "Design and run experiments (A/B tests) and interpret their results rigorously",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Machine learning",
+      "category_code": "AI",
+      "evidence": "Foundational machine learning knowledge: bias-variance tradeoff, regression vs. classification, gradient descent",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Python",
+      "category_code": "COD",
+      "evidence": "Python for data analysis and predictive modeling",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Statistics",
+      "category_code": "AI",
+      "evidence": "Applying sound statistical judgment and metrics evaluation",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Communication",
+      "category_code": "COMM",
+      "evidence": "Able to explain a complex model or surprising result to a product manager in plain language",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Data Visualization",
+      "category_code": "OTHER",
+      "evidence": "Visualizing metrics and findings for cross-functional partners",
+      "confidence": "medium",
+      "importance": "preferred"
+    }
+  ],
+  "extras": {}
+}

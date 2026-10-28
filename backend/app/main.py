@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-load_dotenv()
+load_dotenv(override=False)
 
 log = logging.getLogger("uvicorn.error")
 
@@ -25,7 +25,14 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        "http://localhost:5174",
+        "http://127.0.0.1:5174",
+        "http://localhost:5175",
+        "http://127.0.0.1:5175",
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
     ],
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -46,7 +53,17 @@ for name in MODULES:
 def health():
     from app.schemas import CONTRACT_VERSION
     from app.core import storage
-    return {"ok": True, "contract": CONTRACT_VERSION, "storage": storage.status()}
+    import os
+    from app.core import llm
+    return {
+        "ok": True,
+        "contract": CONTRACT_VERSION,
+        "storage": storage.status(),
+        "openrouter": {
+            "configured": bool(os.getenv("OPENROUTER_API_KEY")),
+            "models": llm.models(),
+        },
+    }
 
 
 @app.get("/api/mock/{kind}")

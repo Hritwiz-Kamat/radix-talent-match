@@ -1,0 +1,58 @@
+{
+  "source_type": "jd",
+  "source_file": "Oracle - Application Support Analyst.pdf",
+  "company": "Oracle Financial Services Software",
+  "role": "Application Support Analyst",
+  "skills": [
+    {
+      "skill_name": "SQL (basic)",
+      "category_code": "SQL",
+      "evidence": "Comfort with basic SQL: simple SELECT/WHERE queries and understanding primary keys",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Linux basics",
+      "category_code": "OS",
+      "evidence": "Basic command-line usage, log file inspection, batch vs real-time processing",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Networking fundamentals",
+      "category_code": "NETW",
+      "evidence": "What an IP address is, client-server architecture fundamentals, latency",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Analytical reasoning",
+      "category_code": "APTI",
+      "evidence": "Data interpretation from tables, arithmetic, and structured problem-solving",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Team coordination",
+      "category_code": "COMM",
+      "evidence": "Able to explain a technical issue to a non-technical client, stay calm during incidents",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Incident troubleshooting",
+      "category_code": "OTHER",
+      "evidence": "Triage, investigate, and resolve incidents raised by banking clients within SLA",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Ticketing tools",
+      "category_code": "OTHER",
+      "evidence": "Coordinate with development teams on escalations, monitoring tools",
+      "confidence": "medium",
+      "importance": "preferred"
+    }
+  ],
+  "extras": {}
+}

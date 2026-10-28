@@ -1,0 +1,58 @@
+{
+  "source_type": "jd",
+  "source_file": "Oracle - Associate Software Engineer.pdf",
+  "company": "Oracle Financial Services Software",
+  "role": "Associate Software Engineer",
+  "skills": [
+    {
+      "skill_name": "Java",
+      "category_code": "COD",
+      "evidence": "Read and predict output of code, solve basic string/array manipulation problems",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "SQL",
+      "category_code": "SQL",
+      "evidence": "Correct SELECT/WHERE syntax, DELETE vs TRUNCATE, simple relational queries",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Data Structures",
+      "category_code": "DSA",
+      "evidence": "Arrays vs linked lists, when to use a stack or queue, basic algorithmic problem-solving",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Object-Oriented Programming",
+      "category_code": "OOD",
+      "evidence": "Inheritance, polymorphism, abstract classes vs interfaces with real examples",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Operating Systems",
+      "category_code": "OS",
+      "evidence": "Basic understanding of processes, threads, and filesystems",
+      "confidence": "medium",
+      "importance": "preferred"
+    },
+    {
+      "skill_name": "Communication",
+      "category_code": "COMM",
+      "evidence": "Document work clearly for future maintainers, participate in Agile ceremonies",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Testing and CI",
+      "category_code": "SWE",
+      "evidence": "Unit testing, collaborating closely with QA, debugging code",
+      "confidence": "high",
+      "importance": "required"
+    }
+  ],
+  "extras": {}
+}

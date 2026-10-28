@@ -1,0 +1,79 @@
+{
+  "source_type": "jd",
+  "source_file": "Microsoft - Software Engineer.pdf",
+  "company": "Microsoft Corporation",
+  "role": "Software Engineer",
+  "skills": [
+    {
+      "skill_name": "Data Structures & Algorithms",
+      "category_code": "DSA",
+      "evidence": "Strong data structures and algorithms fundamentals: hash maps, trees, complexity analysis",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Coding",
+      "category_code": "COD",
+      "evidence": "Practical coding skills: pattern matching, interval problems, writing code for large inputs",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "C++",
+      "category_code": "COD",
+      "evidence": "C++ or modern programming language proficiency",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Operating Systems",
+      "category_code": "OS",
+      "evidence": "Process scheduling, virtual memory, concurrency primitives",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Computer Networks",
+      "category_code": "NETW",
+      "evidence": "REST APIs, timeouts, request lifecycle, HTTP",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "System Design",
+      "category_code": "SYSD",
+      "evidence": "Sketch a cloud-based storage or notification service and reason about scalability and fault tolerance",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Object-Oriented Design",
+      "category_code": "OOD",
+      "evidence": "Common design patterns with extensible, maintainable architecture",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Git",
+      "category_code": "SWE",
+      "evidence": "Version control, pull requests, and software lifecycle",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Testing and CI",
+      "category_code": "SWE",
+      "evidence": "Write clean, well-tested code and participate in code reviews",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Docker",
+      "category_code": "CLOUD",
+      "evidence": "Experience building and containerizing services on Azure or cloud platforms",
+      "confidence": "medium",
+      "importance": "preferred"
+    }
+  ],
+  "extras": {}
+}

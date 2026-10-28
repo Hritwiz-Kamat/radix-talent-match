@@ -286,9 +286,9 @@ def load_company_levels_with_source() -> tuple[list[dict], str]:
     # 1. Try Supabase / local storage mirror
     try:
         from ..core import storage  # late import keeps scoring.py clean during unit tests
-        raw = storage.load("company_skillsets", "all")
+        raw, source = storage.load_with_source("company_skillsets", "all")
         if raw and "roles" in raw:
-            return raw["roles"], "supabase"
+            return raw["roles"], source or "json"
     except Exception as e:
         log.warning("Unable to load company skillsets from storage: %s", e)
 

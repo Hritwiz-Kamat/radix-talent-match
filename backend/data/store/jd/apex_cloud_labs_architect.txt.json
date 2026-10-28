@@ -1,0 +1,93 @@
+{
+  "source_type": "jd",
+  "source_file": "Apex_Cloud_Labs_Architect.txt",
+  "company": null,
+  "role": "Apex_Cloud_Labs_Architect",
+  "skills": [
+    {
+      "skill_name": "Rust",
+      "category_code": "COD",
+      "evidence": "- Strong proficiency in Rust or Go required for low-latency engine development.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Data Structures",
+      "category_code": "DSA",
+      "evidence": "- Strong problem solving and data structures knowledge required.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Problem Solving",
+      "category_code": "DSA",
+      "evidence": "- Strong problem solving and data structures knowledge required.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Machine Learning",
+      "category_code": "AI",
+      "evidence": "- Familiarity with Machine Learning pipelines preferred.",
+      "confidence": "high",
+      "importance": "preferred"
+    },
+    {
+      "skill_name": "Docker",
+      "category_code": "CLOUD",
+      "evidence": "- Hands-on experience with Docker and Kubernetes required.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Kubernetes",
+      "category_code": "CLOUD",
+      "evidence": "- Hands-on experience with Docker and Kubernetes required.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "SQL",
+      "category_code": "SQL",
+      "evidence": "- Proficiency in PostgreSQL and SQL database management required.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "PostgreSQL",
+      "category_code": "SQL",
+      "evidence": "- Proficiency in PostgreSQL and SQL database management required.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Database Systems",
+      "category_code": "SQL",
+      "evidence": "- Proficiency in PostgreSQL and SQL database management required.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "System Design",
+      "category_code": "SYSD",
+      "evidence": "- Deep expertise in Distributed Systems and System Design required.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Distributed Systems",
+      "category_code": "SYSD",
+      "evidence": "- Deep expertise in Distributed Systems and System Design required.",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Linux",
+      "category_code": "OS",
+      "evidence": "- Experience with C++ and Linux kernel concepts preferred.",
+      "confidence": "high",
+      "importance": "preferred"
+    }
+  ],
+  "extras": {}
+}

@@ -1,0 +1,65 @@
+{
+  "source_type": "jd",
+  "source_file": "Microsoft - Data Analyst.pdf",
+  "company": "Microsoft Corporation",
+  "role": "Data Analyst",
+  "skills": [
+    {
+      "skill_name": "SQL",
+      "category_code": "SQL",
+      "evidence": "Write and optimize SQL queries against large production datasets",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Database schema design",
+      "category_code": "SQL",
+      "evidence": "Design schemas for telemetry and usage data, normalize vs denormalize",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Quantitative Reasoning",
+      "category_code": "APTI",
+      "evidence": "Interpreting trends, sampling, probability, and reasoning with data tables",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Applied Statistics",
+      "category_code": "AI",
+      "evidence": "Basic applied statistics/ML literacy: regression vs classification, overfitting",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Power BI / dashboards",
+      "category_code": "OTHER",
+      "evidence": "Build dashboards and reporting that stakeholders actually use",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Anomaly detection",
+      "category_code": "AI",
+      "evidence": "Detect and explain anomalies in usage or business metrics",
+      "confidence": "medium",
+      "importance": "preferred"
+    },
+    {
+      "skill_name": "Presenting to non-technical audiences",
+      "category_code": "COMM",
+      "evidence": "Translating a dashboard or analysis into a decision a non-technical leader can act on",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Excel",
+      "category_code": "OTHER",
+      "evidence": "Hands-on reporting tools and data modeling",
+      "confidence": "medium",
+      "importance": "preferred"
+    }
+  ],
+  "extras": {}
+}

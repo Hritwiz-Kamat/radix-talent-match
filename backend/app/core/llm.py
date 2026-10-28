@@ -21,11 +21,13 @@ def models() -> list[str]:
 
 def _client(model: str):
     from langchain_openai import ChatOpenAI
-    return ChatOpenAI(model=model, temperature=0, timeout=60, max_retries=0,
+    return ChatOpenAI(model=model, temperature=0, timeout=15, max_retries=0,
                       base_url="https://openrouter.ai/api/v1", api_key=os.getenv("OPENROUTER_API_KEY"))
 
 
 def ask(messages: list[tuple[str, str]], retries_per_model: int = 1) -> str:
+    if not os.getenv("OPENROUTER_API_KEY"):
+        raise RuntimeError("OPENROUTER_API_KEY is not configured")
     """messages = [("system", "..."), ("human", "...")]. Returns the reply text.
     Tries every configured model in order. Raises RuntimeError only if ALL fail."""
     errors = []

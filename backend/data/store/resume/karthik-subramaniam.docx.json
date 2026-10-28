@@ -1,0 +1,114 @@
+{
+  "source_type": "resume",
+  "source_file": "Karthik Subramaniam.docx",
+  "company": null,
+  "role": null,
+  "skills": [
+    {
+      "skill_name": "SQL",
+      "category_code": "SQL",
+      "evidence": "listed first; SQL extraction in churn pipeline",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Database schema design",
+      "category_code": "SQL",
+      "evidence": "normalized schema for event-management system",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Python (pandas, scikit-learn)",
+      "category_code": "COD",
+      "evidence": "churn-prediction pipeline",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Machine learning (logistic regression)",
+      "category_code": "AI",
+      "evidence": "end-to-end churn-prediction model",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Statistics",
+      "category_code": "AI",
+      "evidence": "listed; A/B test analysis",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "A/B testing",
+      "category_code": "AI",
+      "evidence": "ran and analysed an A/B test simulation",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Anomaly detection",
+      "category_code": "AI",
+      "evidence": "registration-spike anomaly detection",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Power BI / dashboards",
+      "category_code": "OTHER",
+      "evidence": "built recurring dashboards at fintech internship",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Excel",
+      "category_code": "OTHER",
+      "evidence": "listed in technical skills",
+      "confidence": "low",
+      "importance": null
+    },
+    {
+      "skill_name": "Java",
+      "category_code": "COD",
+      "evidence": "basic Java listed",
+      "confidence": "low",
+      "importance": null
+    },
+    {
+      "skill_name": "Presenting to non-technical audiences",
+      "category_code": "COMM",
+      "evidence": "presented A/B results to a non-technical audience",
+      "confidence": "high",
+      "importance": null
+    }
+  ],
+  "extras": {
+    "name": "Karthik Subramaniam",
+    "email": null,
+    "education": "B.Tech CSE, Class of 2026, CGPA 8.2",
+    "experience": [
+      {
+        "title": "Data Analytics intern",
+        "organization": "fintech startup",
+        "description": "built two recurring dashboards",
+        "year": null
+      }
+    ],
+    "hackathons": [
+      {
+        "title": "Runner-up, inter-college data visualization competition",
+        "organization": null,
+        "description": null,
+        "year": null
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Google Data Analytics Certificate",
+        "organization": null,
+        "description": null,
+        "year": null
+      }
+    ]
+  }
+}

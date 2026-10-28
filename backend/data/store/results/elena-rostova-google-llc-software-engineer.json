@@ -1,0 +1,129 @@
+{
+  "company": "Google LLC",
+  "candidate_id": "elena-rostova",
+  "skillset_gap": [
+    {
+      "category_code": "DSA",
+      "required_level": 9,
+      "candidate_level": 8,
+      "gap": true,
+      "gap_size": 1,
+      "explanation": "2 skill(s): Data Structures(high), Algorithms(high) -> base 7 + bonus 1 = 8",
+      "company_aggregate_level": 9,
+      "role_weight": 1.0
+    },
+    {
+      "category_code": "COD",
+      "required_level": 8,
+      "candidate_level": 8,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "2 skill(s): Python(high), Rust(high) -> base 7 + bonus 1 = 8",
+      "company_aggregate_level": 8,
+      "role_weight": 1.0
+    },
+    {
+      "category_code": "OOD",
+      "required_level": 8,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 8,
+      "explanation": "no evidence",
+      "company_aggregate_level": 8,
+      "role_weight": 1.0
+    },
+    {
+      "category_code": "APTI",
+      "required_level": 6,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 6,
+      "explanation": "no evidence",
+      "company_aggregate_level": 9,
+      "role_weight": 0.7
+    },
+    {
+      "category_code": "COMM",
+      "required_level": 4,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 4,
+      "explanation": "no evidence",
+      "company_aggregate_level": 7,
+      "role_weight": 0.6
+    },
+    {
+      "category_code": "AI",
+      "required_level": 1,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 1,
+      "explanation": "no evidence",
+      "company_aggregate_level": 7,
+      "role_weight": 0.1
+    },
+    {
+      "category_code": "CLOUD",
+      "required_level": 4,
+      "candidate_level": 10,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "5 skill(s): Amazon Web Services(high), Docker(high), Kubernetes(high), CI/CD(high), DevOps(high) -> base 7 + bonus 3 = 10",
+      "company_aggregate_level": 9,
+      "role_weight": 0.5
+    },
+    {
+      "category_code": "SQL",
+      "required_level": 2,
+      "candidate_level": 10,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "4 skill(s): SQL(high), PostgreSQL(high), Redis(high), Database Systems(high) -> base 7 + bonus 3 = 10",
+      "company_aggregate_level": 8,
+      "role_weight": 0.3
+    },
+    {
+      "category_code": "SWE",
+      "required_level": 9,
+      "candidate_level": 7,
+      "gap": true,
+      "gap_size": 2,
+      "explanation": "1 skill(s): GitHub(high) -> base 7 + bonus 0 = 7",
+      "company_aggregate_level": 9,
+      "role_weight": 1.0
+    },
+    {
+      "category_code": "SYSD",
+      "required_level": 4,
+      "candidate_level": 9,
+      "gap": false,
+      "gap_size": 0,
+      "explanation": "3 skill(s): System Design(high), Microservices(high), Distributed Systems(high) -> base 7 + bonus 2 = 9",
+      "company_aggregate_level": 4,
+      "role_weight": 1.0
+    },
+    {
+      "category_code": "NETW",
+      "required_level": 7,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 7,
+      "explanation": "no evidence",
+      "company_aggregate_level": 9,
+      "role_weight": 0.8
+    },
+    {
+      "category_code": "OS",
+      "required_level": 9,
+      "candidate_level": 0,
+      "gap": true,
+      "gap_size": 9,
+      "explanation": "no evidence",
+      "company_aggregate_level": 9,
+      "role_weight": 1.0
+    }
+  ],
+  "readiness_score": 46,
+  "scoring_method": "readiness = round(100 x sum(min(candidate_level, required_level)) / sum(required_level)) over the 12 skillsets. candidate_level: strongest skill in category (high=7, med=5, low=3) + 1 per additional skill in same category (max +3 bonus), capped at 10. required_level = round(company_aggregate x role_weight); role weights emphasise COD/DSA/OS for SWE and AI/SQL/COMM for Data Scientist.",
+  "data_source": "json"
+}

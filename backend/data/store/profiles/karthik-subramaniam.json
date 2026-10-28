@@ -106,9 +106,6 @@
       "year": null
     }
   ],
-  "preferred_roles": [
-    "Data Analyst",
-    "Data Scientist"
-  ],
-  "cv_file": null
+  "preferred_roles": [],
+  "cv_file": "resume/Karthik Subramaniam.docx"
 }

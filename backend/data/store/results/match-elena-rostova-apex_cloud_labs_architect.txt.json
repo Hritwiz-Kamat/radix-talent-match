@@ -1,0 +1,81 @@
+{
+  "jd_source_file": "Apex_Cloud_Labs_Architect.txt",
+  "candidate_id": "elena-rostova",
+  "match_score": 82,
+  "matched_skills": [
+    {
+      "jd_skill": "Rust",
+      "candidate_skill": "Rust",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "Data Structures",
+      "candidate_skill": "Data Structures",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "Docker",
+      "candidate_skill": "Docker",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "Kubernetes",
+      "candidate_skill": "Kubernetes",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "SQL",
+      "candidate_skill": "SQL",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "PostgreSQL",
+      "candidate_skill": "PostgreSQL",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "Database Systems",
+      "candidate_skill": "Database Systems",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "System Design",
+      "candidate_skill": "System Design",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "Distributed Systems",
+      "candidate_skill": "Distributed Systems",
+      "match_type": "exact",
+      "similarity": 1.0
+    }
+  ],
+  "missing_skills": [
+    {
+      "skill_name": "Problem Solving",
+      "category_code": "DSA",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Problem Solving."
+    },
+    {
+      "skill_name": "Machine Learning",
+      "category_code": "AI",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Machine Learning."
+    },
+    {
+      "skill_name": "Linux",
+      "category_code": "OS",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Linux."
+    }
+  ]
+}

@@ -10,9 +10,28 @@ backend/.env.*
 __pycache__/
 .venv/
 .pytest_cache/
+*.pyc
+*.pyo
 
-# Node
+# Node & Build artifacts
 node_modules/
+dist/
+frontend/dist/
+*.log
 
-# Uploaded CV files
+# Personal & User-uploaded Candidate Resumes & Documents
 backend/data/store/files/cv/
+backend/data/store/files/resume/*
+!backend/data/store/files/resume/Karthik Subramaniam.pdf
+!backend/data/store/files/resume/Priya Menon.docx
+backend/data/store/files/jd/*
+backend/data/store/resume/*Sameer*
+backend/data/store/resume/*sameer*
+backend/data/store/profiles/*sameer*
+backend/data/store/results/*sameer*
+
+# Temporary scripts & IDE
+.vscode/
+.idea/
+*.swp
+*.tmp

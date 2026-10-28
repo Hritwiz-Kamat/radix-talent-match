@@ -89,6 +89,10 @@ def load_with_source(kind: str, key: str) -> tuple[object | None, str | None]:
         except Exception as e:
             _fail(f"load {kind}/{key} failed", e)
     f = ROOT / kind / f"{key}.json"
+    if not f.exists() and not key.endswith(".pdf"):
+        f_alt = ROOT / kind / f"{key}.pdf.json"
+        if f_alt.exists():
+            f = f_alt
     return (json.loads(f.read_text(encoding="utf-8")), "json") if f.exists() else (None, None)
 
 

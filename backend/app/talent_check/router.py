@@ -88,6 +88,8 @@ def list_candidates():
                 "id":   raw.get("candidate_id", key),   # slug, e.g. "ananya-rao"
                 "name": raw.get("name", key),            # display name, e.g. "Ananya Rao"
             })
+    FIXTURE_IDS = {"ananya-rao", "karthik-subramaniam", "priya-menon", "rohan-verma"}
+    result.sort(key=lambda p: (p["id"] in FIXTURE_IDS, p["name"]))
     return result
 
 

@@ -5,30 +5,89 @@
   "role": null,
   "skills": [
     {
-      "skill_name": "Python",
-      "category_code": "COD",
-      "evidence": "3+ years of Python",
-      "confidence": "high",
-      "importance": "required"
-    },
-    {
-      "skill_name": "Data Structures",
-      "category_code": "DSA",
-      "evidence": "strong DSA fundamentals",
-      "confidence": "high",
-      "importance": "required"
-    },
-    {
-      "skill_name": "SQL",
+      "skill_name": "SQL (basic)",
       "category_code": "SQL",
-      "evidence": "write complex queries",
+      "evidence": "MySQL backend in attendance tracker; 'SQL (basic)'",
+      "confidence": "low",
+      "importance": null
+    },
+    {
+      "skill_name": "Java",
+      "category_code": "COD",
+      "evidence": "attendance tracker built in Java",
       "confidence": "medium",
-      "importance": "preferred"
+      "importance": null
+    },
+    {
+      "skill_name": "Linux basics",
+      "category_code": "OS",
+      "evidence": "listed as basics",
+      "confidence": "low",
+      "importance": null
+    },
+    {
+      "skill_name": "Networking fundamentals",
+      "category_code": "NETW",
+      "evidence": "listed; Cisco Networking Basics course",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Incident troubleshooting",
+      "category_code": "OTHER",
+      "evidence": "first-level troubleshooting and escalations at IT support desk",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Ticketing tools",
+      "category_code": "OTHER",
+      "evidence": "exposure to ticketing tools; helpdesk simulation",
+      "confidence": "low",
+      "importance": null
+    },
+    {
+      "skill_name": "MS Excel",
+      "category_code": "OTHER",
+      "evidence": "listed in technical skills",
+      "confidence": "low",
+      "importance": null
+    },
+    {
+      "skill_name": "Team coordination",
+      "category_code": "COMM",
+      "evidence": "volunteer coordinator for college technical fest",
+      "confidence": "medium",
+      "importance": null
     }
   ],
   "extras": {
-    "education": "B.Tech CSE",
-    "projects": [],
-    "experience": []
+    "name": "Priya Menon",
+    "email": null,
+    "education": "B.Tech IT, Class of 2026, CGPA 7.4",
+    "experience": [
+      {
+        "title": "Summer intern, IT support desk",
+        "organization": "local business",
+        "description": null,
+        "year": null
+      }
+    ],
+    "hackathons": [
+      {
+        "title": "Participant, 12-hour campus hackathon (non-finalist)",
+        "organization": null,
+        "description": null,
+        "year": null
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Cisco Networking Basics (online course)",
+        "organization": null,
+        "description": null,
+        "year": null
+      }
+    ]
   }
 }

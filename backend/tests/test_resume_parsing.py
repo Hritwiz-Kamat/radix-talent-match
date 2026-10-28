@@ -1,5 +1,6 @@
 """Unit and integration tests for Role 2 (Resume Parsing) endpoints."""
 import io
+from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
@@ -33,11 +34,40 @@ def test_parse_sample_happy_path(client):
     assert len(validated.skills) > 0
 
 
+def test_parse_sample_flexible_lookup(client):
+    """Resilience path: flexible lookup handles slug and case variations."""
+    res = client.post("/api/resume/parse-sample?name=ananya-rao.docx")
+    assert res.status_code == 200
+    data = res.json()
+    assert "Ananya Rao" in data["source_file"]
+
+
 def test_parse_sample_not_found(client):
     """Bad-input path: missing sample returns 404 with helpful error message."""
-    res = client.post("/api/resume/parse-sample?name=ghost_candidate.pdf")
+    res = client.post("/api/resume/parse-sample?name=ghost_candidate_xyz.pdf")
     assert res.status_code == 404
     assert "not found" in res.json()["detail"].lower()
+
+
+def test_parse_upload_docx_success(client):
+    """Happy path: uploading real DOCX resume extracts candidate information."""
+    sample_docx = Path(__file__).resolve().parents[1] / "data" / "resumes" / "Ananya Rao.docx"
+    assert sample_docx.exists(), "Sample Ananya Rao.docx must exist"
+    with open(sample_docx, "rb") as f:
+        files = {"file": ("Ananya Rao.docx", f.read(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document")}
+    res = client.post("/api/resume/parse", files=files)
+    assert res.status_code == 200
+    data = res.json()
+    assert data["source_file"] == "Ananya Rao.docx"
+    assert len(data["skills"]) > 0
+
+
+def test_parse_upload_empty_file(client):
+    """Bad-input path: uploading empty file returns 400."""
+    files = {"file": ("empty.pdf", b"", "application/pdf")}
+    res = client.post("/api/resume/parse", files=files)
+    assert res.status_code == 400
+    assert "empty" in res.json()["detail"].lower()
 
 
 def test_parse_upload_bad_extension(client):

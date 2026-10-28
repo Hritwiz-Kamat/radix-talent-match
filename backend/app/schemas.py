@@ -18,7 +18,7 @@ from typing import Literal, Optional, get_args
 
 from pydantic import BaseModel, Field, field_validator
 
-CONTRACT_VERSION = "1.0"
+CONTRACT_VERSION = "1.2"
 
 CategoryCode = Literal[
     "DSA", "COD", "OOD", "APTI", "COMM", "AI",

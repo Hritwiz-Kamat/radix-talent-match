@@ -69,8 +69,32 @@ def match_skills(req: SkillMatchRequest) -> SkillMatchResult:
             detail=f"Stored candidate profile for '{req.candidate_id}' is invalid: {e.errors()}",
         )
 
-    # 2. Load extracted JD skills from storage
-    raw_jd = storage.load("jd", req.jd_source_file)
+    # 2. Load extracted JD skills from storage (with auto-extension fallback and on-the-fly parsing)
+    raw_jd = storage.load('jd', req.jd_source_file)
+    if raw_jd is None:
+        alt_ext = None
+        if req.jd_source_file.lower().endswith('.docx'):
+            alt_ext = req.jd_source_file[:-5] + '.pdf'
+        elif req.jd_source_file.lower().endswith('.pdf'):
+            alt_ext = req.jd_source_file[:-4] + '.docx'
+
+        if alt_ext:
+            raw_jd = storage.load('jd', alt_ext)
+
+        if raw_jd is None:
+            try:
+                from app.jd_analytics.router import parse_jd
+                analyzed = parse_jd(filename=req.jd_source_file)
+                raw_jd = analyzed.model_dump()
+            except Exception:
+                if alt_ext:
+                    try:
+                        from app.jd_analytics.router import parse_jd
+                        analyzed = parse_jd(filename=alt_ext)
+                        raw_jd = analyzed.model_dump()
+                    except Exception:
+                        pass
+
     if raw_jd is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -120,6 +144,10 @@ def get_match_matrix() -> MatrixResponse:
         try:
             doc = storage.load("results", key)
             if not doc or not isinstance(doc, dict):
+                continue
+            jd_src = str(doc.get("jd_source_file", ""))
+            # Exclude mistaken results where a resume was matched as a JD or test keys
+            if "resume" in jd_src.lower() or "cv" in jd_src.lower() or "_test_" in key:
                 continue
             if "candidate_id" in doc and "jd_source_file" in doc and "match_score" in doc:
                 entries.append(

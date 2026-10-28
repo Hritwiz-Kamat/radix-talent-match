@@ -1,5 +1,7 @@
 
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
 import { BASE, get, put } from "../api";
 
 const CATEGORIES = [
@@ -165,6 +167,8 @@ function ProfileItemEditor({ title, items = [], onChange }) {
 }
 
 export default function ProfileBuilder() {
+  const navigate = useNavigate();
+  const { currentCandidate, setCurrentCandidate } = useAppContext();
   const [profiles, setProfiles] = useState([]);
   const [candidateId, setCandidateId] = useState("");
   const [profile, setProfile] = useState(null);
@@ -190,10 +194,17 @@ export default function ProfileBuilder() {
 
         if (!active) return;
 
-        setProfiles(data);
+        let list = [...data];
+        const preferredId = currentCandidate?.candidate_id || currentCandidate?.id;
+        if (preferredId && !list.some((p) => (p.candidate_id || p.id) === preferredId)) {
+          list = [currentCandidate, ...list];
+        }
+        setProfiles(list);
 
-        if (data.length > 0) {
-          setCandidateId(data[0].candidate_id);
+        if (preferredId) {
+          setCandidateId(preferredId);
+        } else if (list.length > 0) {
+          setCandidateId(list[0].candidate_id || list[0].id);
         }
       } catch (err) {
         if (active) setError(err.message || "Could not load candidates.");
@@ -207,7 +218,7 @@ export default function ProfileBuilder() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [currentCandidate]);
 
   useEffect(() => {
     if (!candidateId) {
@@ -225,11 +236,20 @@ export default function ProfileBuilder() {
         setMessage("");
         setSelectedFile(null);
 
-        const data = await get(`/api/profile/${candidateId}`);
-
-        if (active) {
-          setProfile(data);
-          setRolesInput((data.preferred_roles || []).join(", "));
+        try {
+          const data = await get(`/api/profile/${candidateId}`);
+          if (active) {
+            setProfile(data);
+            setCurrentCandidate(data);
+            setRolesInput((data.preferred_roles || []).join(", "));
+          }
+        } catch (fetchErr) {
+          if (active && currentCandidate && (currentCandidate.candidate_id === candidateId || currentCandidate.id === candidateId)) {
+            setProfile(currentCandidate);
+            setRolesInput((currentCandidate.preferred_roles || []).join(", "));
+          } else {
+            throw fetchErr;
+          }
         }
       } catch (err) {
         if (active) {
@@ -249,6 +269,46 @@ export default function ProfileBuilder() {
   function updateField(field, value) {
     setProfile((current) => ({ ...current, [field]: value }));
     setMessage("");
+  }
+
+  function handleCreateNew() {
+    const newId = `candidate-${Date.now().toString().slice(-4)}`;
+    const newProfile = {
+      candidate_id: newId,
+      name: "New Candidate",
+      email: "",
+      education: "",
+      role: "Software Engineer",
+      skills: [],
+      experience: [],
+      hackathons: [],
+      certifications: [],
+      preferred_roles: [],
+    };
+    setProfiles((prev) => [{ candidate_id: newId, name: "New Candidate" }, ...prev]);
+    setCandidateId(newId);
+    setProfile(newProfile);
+    setCurrentCandidate(newProfile);
+    setMessage("Created new blank candidate. Edit details and click Save Profile.");
+  }
+
+  async function handleDelete() {
+    if (!candidateId) return;
+    if (!window.confirm(`Are you sure you want to delete profile '${profile?.name || candidateId}'?`)) return;
+    try {
+      await fetch(`${BASE}/api/profile/${candidateId}`, { method: "DELETE" });
+      const updated = profiles.filter((p) => p.candidate_id !== candidateId);
+      setProfiles(updated);
+      if (updated.length > 0) {
+        setCandidateId(updated[0].candidate_id);
+      } else {
+        setCandidateId("");
+        setProfile(null);
+      }
+      setMessage("Profile deleted successfully.");
+    } catch (err) {
+      setError("Failed to delete profile: " + err.message);
+    }
   }
 
   function updateSkill(index, field, value) {
@@ -322,6 +382,7 @@ export default function ProfileBuilder() {
       const saved = await put(`/api/profile/${candidateId}`, payload);
 
       setProfile(saved);
+      setCurrentCandidate(saved);
       setRolesInput((saved.preferred_roles || []).join(", "));
       setMessage("Profile saved successfully.");
     } catch (err) {
@@ -435,15 +496,53 @@ export default function ProfileBuilder() {
 
 
       <div style={cardStyle}>
-        <label htmlFor="candidate-picker" style={labelStyle}>
-          Select candidate
-        </label>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+          <label htmlFor="candidate-picker" style={labelStyle}>
+            Select candidate
+          </label>
+          <div style={{ display: "flex", gap: 10 }}>
+            <button
+              type="button"
+              onClick={handleCreateNew}
+              style={{
+                padding: "6px 14px",
+                borderRadius: 6,
+                background: "#22c55e",
+                color: "#fff",
+                border: 0,
+                fontSize: 13,
+                fontWeight: 600,
+                cursor: "pointer",
+              }}
+            >
+              ➕ Create New Candidate
+            </button>
+            {candidateId && (
+              <button
+                type="button"
+                onClick={handleDelete}
+                style={{
+                  padding: "6px 14px",
+                  borderRadius: 6,
+                  background: "#fee2e2",
+                  color: "#b91c1c",
+                  border: "1px solid #fca5a5",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+              >
+                🗑️ Delete
+              </button>
+            )}
+          </div>
+        </div>
 
         <select
           id="candidate-picker"
           value={candidateId}
           onChange={(event) => setCandidateId(event.target.value)}
-          style={{ ...inputStyle, maxWidth: 450 }}
+          style={{ ...inputStyle, maxWidth: 500 }}
         >
           {profiles.map((item) => (
             <option key={item.candidate_id} value={item.candidate_id}>
@@ -699,6 +798,22 @@ export default function ProfileBuilder() {
           >
             {saving ? "Saving..." : "Save Profile"}
           </button>
+          <div style={{ display: "flex", gap: 12, marginTop: 16 }}>
+            <button
+              type="button"
+              onClick={() => navigate("/talent-check")}
+              style={{ ...primaryButton, background: "#059669" }}
+            >
+              Proceed to Talent Check 🎯
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate("/skill-matching")}
+              style={{ ...primaryButton, background: "#0284c7" }}
+            >
+              Proceed to Skill Matching 🔗
+            </button>
+          </div>
         </form>
       )}
     </section>

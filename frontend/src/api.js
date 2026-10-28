@@ -1,8 +1,16 @@
-
-export const BASE = "http://localhost:8000";
+export const BASE = (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.VITE_API_URL)
+  ? import.meta.env.VITE_API_URL
+  : "http://localhost:8000";
 
 async function request(path, options = {}) {
-  const response = await fetch(`${BASE}${path}`, options);
+  let response;
+  try {
+    response = await fetch(`${BASE}${path}`, options);
+  } catch (netErr) {
+    throw new Error(
+      `Cannot connect to backend at ${BASE}. Please verify that the FastAPI backend server is running.`
+    );
+  }
 
   if (!response.ok) {
     let message = `Request failed (${response.status})`;

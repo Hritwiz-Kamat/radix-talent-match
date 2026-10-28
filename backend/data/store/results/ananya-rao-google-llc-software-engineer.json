@@ -125,5 +125,5 @@
   ],
   "readiness_score": 66,
   "scoring_method": "readiness = round(100 x sum(min(candidate_level, required_level)) / sum(required_level)) over the 12 skillsets. candidate_level: strongest skill in category (high=7, med=5, low=3) + 1 per additional skill in same category (max +3 bonus), capped at 10. required_level = round(company_aggregate x role_weight); role weights emphasise COD/DSA/OS for SWE and AI/SQL/COMM for Data Scientist.",
-  "data_source": "json"
+  "data_source": "supabase"
 }

@@ -1,6 +1,6 @@
-
 import { BrowserRouter, NavLink, Navigate, Route, Routes } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
+import AutoDashboard from "./pages/AutoDashboard";
 import JDAnalytics from "./pages/JDAnalytics";
 import ResumeParsing from "./pages/ResumeParsing";
 import ProfileBuilder from "./pages/ProfileBuilder";
@@ -9,6 +9,7 @@ import SkillMatching from "./pages/SkillMatching";
 import "./App.css";
 
 const pages = [
+  { path: "/auto-dashboard", label: "Auto Pipeline", icon: "🚀" },
   { path: "/jd-analytics", label: "JD Analytics", icon: "📊" },
   { path: "/resume-parsing", label: "Resume Parsing", icon: "📄" },
   { path: "/profile-builder", label: "Profile Builder", icon: "👤" },
@@ -56,13 +57,14 @@ export default function App() {
             </header>
 
             <Routes>
-              <Route path="/" element={<Navigate to="/profile-builder" replace />} />
+              <Route path="/" element={<Navigate to="/auto-dashboard" replace />} />
+              <Route path="/auto-dashboard" element={<AutoDashboard />} />
               <Route path="/jd-analytics" element={<JDAnalytics />} />
               <Route path="/resume-parsing" element={<ResumeParsing />} />
-              <Route path="/profile-builder" element={<ProfileBuilder />} />
+              <Route path="/profile-builder" element={<ProfileBuilder />} />        
               <Route path="/talent-check" element={<TalentCheck />} />
               <Route path="/skill-matching" element={<SkillMatching />} />
-              <Route path="*" element={<Navigate to="/profile-builder" replace />} />
+              <Route path="*" element={<Navigate to="/auto-dashboard" replace />} />
             </Routes>
           </main>
         </div>

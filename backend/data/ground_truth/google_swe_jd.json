@@ -1,0 +1,20 @@
+{
+  "_note": "DRAFT - needs human review. Hand-curated directly from Google LLC - Software Engineer.pdf text.",
+  "document": "Google LLC - Software Engineer",
+  "document_type": "jd",
+  "skills": [
+    { "skill_name": "Data Structures & Algorithms", "category_code": "DSA", "importance": "required" },
+    { "skill_name": "Programming / Coding", "category_code": "COD", "importance": "required" },
+    { "skill_name": "Operating Systems", "category_code": "OS", "importance": "required" },
+    { "skill_name": "Computer Networks", "category_code": "NETW", "importance": "required" },
+    { "skill_name": "Object-Oriented Design", "category_code": "OOD", "importance": "required" },
+    { "skill_name": "System Design", "category_code": "SYSD", "importance": "required" },
+    { "skill_name": "Distributed Systems", "category_code": "SYSD", "importance": "required" },
+    { "skill_name": "Testing", "category_code": "SWE", "importance": "required" },
+    { "skill_name": "Code Review", "category_code": "SWE", "importance": "required" },
+    { "skill_name": "CI/CD", "category_code": "SWE", "importance": "required" },
+    { "skill_name": "Communication Skills", "category_code": "COMM", "importance": "required" },
+    { "skill_name": "Backend APIs", "category_code": "SWE", "importance": "required" }
+  ]
+}
+

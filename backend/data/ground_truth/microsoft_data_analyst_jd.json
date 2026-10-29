@@ -1,0 +1,18 @@
+{
+  "_note": "DRAFT - needs human review. Hand-curated directly from Microsoft - Data Analyst.pdf text.",
+  "document": "Microsoft - Data Analyst",
+  "document_type": "jd",
+  "skills": [
+    { "skill_name": "SQL", "category_code": "SQL", "importance": "required" },
+    { "skill_name": "Database Schema Design", "category_code": "SQL", "importance": "required" },
+    { "skill_name": "Query Optimization", "category_code": "SQL", "importance": "required" },
+    { "skill_name": "Dashboards & Reporting", "category_code": "AI", "importance": "required" },
+    { "skill_name": "Power BI", "category_code": "AI", "importance": "preferred" },
+    { "skill_name": "Quantitative Reasoning", "category_code": "APTI", "importance": "required" },
+    { "skill_name": "Applied Statistics", "category_code": "AI", "importance": "required" },
+    { "skill_name": "Machine Learning", "category_code": "AI", "importance": "required" },
+    { "skill_name": "Stakeholder Communication", "category_code": "COMM", "importance": "required" },
+    { "skill_name": "Anomaly Detection", "category_code": "AI", "importance": "required" }
+  ]
+}
+

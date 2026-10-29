@@ -14,70 +14,63 @@
     {
       "skill_name": "Python",
       "category_code": "COD",
-      "evidence": "Technical Skills: Python (pandas, scikit-learn)",
+      "evidence": "Python (pandas, scikit-learn)",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "pandas",
       "category_code": "AI",
-      "evidence": "Technical Skills: Python (pandas, scikit-learn)",
+      "evidence": "Python (pandas, scikit-learn)",
       "confidence": "medium",
       "importance": null
     },
     {
       "skill_name": "scikit-learn",
       "category_code": "AI",
-      "evidence": "Technical Skills: Python (pandas, scikit-learn)",
+      "evidence": "Python (pandas, scikit-learn)",
       "confidence": "medium",
       "importance": null
     },
     {
       "skill_name": "Power BI",
       "category_code": "OTHER",
-      "evidence": "Technical Skills: Power BI",
+      "evidence": "Power BI",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Statistics",
       "category_code": "AI",
-      "evidence": "Technical Skills: Statistics",
+      "evidence": "Statistics",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "A/B testing basics",
       "category_code": "AI",
-      "evidence": "Technical Skills: A/B testing basics",
+      "evidence": "A/B testing basics",
       "confidence": "medium",
       "importance": null
     },
     {
       "skill_name": "Excel",
       "category_code": "OTHER",
-      "evidence": "Technical Skills: Excel",
+      "evidence": "Excel",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "basic Java",
       "category_code": "COD",
-      "evidence": "Technical Skills: basic Java",
-      "confidence": "medium",
-      "importance": null
-    },
-    {
-      "skill_name": "Communication",
-      "category_code": "COMM",
-      "evidence": "Ran and analyzed an A/B test simulation comparing two onboarding flows, presenting results to a non-technical audience",
+      "evidence": "basic Java",
       "confidence": "medium",
       "importance": null
     }
   ],
   "extras": {
     "name": "Karthik Subramaniam",
-    "education": "B.Tech, Computer Science and Engineering, Class of 2026 - CGPA 8.2 / 10",
+    "education": "B.Tech, Computer Science and Engineering, Class of 2026 — CGPA 8.2 / 10",
     "experience": [
       {
         "title": "Data Analytics Intern",
@@ -88,9 +81,9 @@
     ],
     "hackathons": [
       {
-        "title": "Runner-up, inter-college data visualization competition",
+        "title": "Inter-college data visualization competition",
         "organization": null,
-        "description": "Data visualization competition",
+        "description": "Runner-up",
         "year": null
       }
     ],
@@ -98,7 +91,7 @@
       {
         "title": "Google Data Analytics Certificate",
         "organization": "Google",
-        "description": "Data Analytics Certificate",
+        "description": null,
         "year": null
       }
     ],

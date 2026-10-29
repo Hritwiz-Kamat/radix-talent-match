@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
@@ -9,8 +10,6 @@ import { useAppContext } from "../context/AppContext";
 
 const API = BASE;
 
-
-// Human-readable labels for the 12 category codes
 const CATEGORY_LABELS = {
   DSA:  "Data Structures & Algo",
   COD:  "Coding / Languages",
@@ -26,22 +25,19 @@ const CATEGORY_LABELS = {
   OS:   "Operating Systems",
 };
 
-
-// Colour palette (cool blues / purples for radar + a vibrant orange for gaps)
 const COLORS = {
-  candidate: "#6366f1",   // indigo
-  required:  "#94a3b8",   // slate
-  gap:       "#f97316",   // orange
+  candidate: "#6366f1",
+  required:  "#94a3b8",
+  gap:       "#f97316",
   bar:       ["#6366f1", "#06b6d4", "#10b981", "#f59e0b"],
 };
 
 function scoreColor(score) {
-  if (score >= 70) return "#10b981";  // green
-  if (score >= 45) return "#f59e0b";  // amber
-  return "#ef4444";                   // red
+  if (score >= 70) return "#10b981";
+  if (score >= 45) return "#f59e0b";
+  return "#ef4444";
 }
 
-// ── Readiness dial (big number with ring) ──────────────────────────────────
 function ReadinessDial({ score }) {
   const radius = 70;
   const circumference = 2 * Math.PI * radius;
@@ -51,9 +47,7 @@ function ReadinessDial({ score }) {
   return (
     <div className="dial-wrapper" aria-label={`Readiness score: ${score}%`}>
       <svg width="180" height="180" viewBox="0 0 180 180">
-        {/* track */}
         <circle cx="90" cy="90" r={radius} fill="none" stroke="#1e293b" strokeWidth="16" />
-        {/* filled arc */}
         <circle
           cx="90" cy="90" r={radius} fill="none"
           stroke={color} strokeWidth="16"
@@ -72,7 +66,6 @@ function ReadinessDial({ score }) {
   );
 }
 
-// ── Gap table ──────────────────────────────────────────────────────────────
 function GapTable({ gaps }) {
   const sorted = [...gaps].sort((a, b) => b.gap_size - a.gap_size);
   return (
@@ -118,7 +111,6 @@ function GapTable({ gaps }) {
                 />
               </td>
             </tr>
-
           ))}
         </tbody>
       </table>
@@ -126,7 +118,6 @@ function GapTable({ gaps }) {
   );
 }
 
-// ── Radar chart ────────────────────────────────────────────────────────────
 function SkillRadar({ gaps }) {
   const data = gaps.map((g) => ({
     category: CATEGORY_LABELS[g.category_code]?.split(" ")[0] ?? g.category_code,
@@ -151,7 +142,6 @@ function SkillRadar({ gaps }) {
   );
 }
 
-// ── Compare bar chart ──────────────────────────────────────────────────────
 function CompareChart({ results, candidates }) {
   const data = results.map((r) => ({
     name: candidates.find((c) => c.id === r.candidate_id)?.name ?? r.candidate_id,
@@ -181,7 +171,6 @@ function CompareChart({ results, candidates }) {
   );
 }
 
-// ── Scoring explanation panel ──────────────────────────────────────────────
 function ScoringPanel({ method, gaps }) {
   const [open, setOpen] = useState(false);
   return (
@@ -210,8 +199,9 @@ function ScoringPanel({ method, gaps }) {
 // ── Main page ──────────────────────────────────────────────────────────────
 export default function TalentCheck() {
   const { currentCandidate } = useAppContext();
+  const location = useLocation();
   const [companiesData, setCompaniesData] = useState(null);
-  const [candidates, setCandidates]       = useState([]);   // [{id, name}] — from /api/talent-check/candidates
+  const [candidates, setCandidates]       = useState([]);
   const [selectedCompany, setSelectedCompany] = useState("");
   const [selectedRole, setSelectedRole]    = useState("");
   const [selectedCandidate, setSelectedCandidate] = useState("");
@@ -220,7 +210,6 @@ export default function TalentCheck() {
   const [loading, setLoading] = useState(false);
   const [error, setError]     = useState(null);
 
-  // Sync selectedCandidate if AppContext provides currentCandidate
   useEffect(() => {
     const preferredCandidateId = currentCandidate?.candidate_id || currentCandidate?.id;
     if (preferredCandidateId && candidates.some((c) => (c.candidate_id || c.id) === preferredCandidateId)) {
@@ -229,7 +218,7 @@ export default function TalentCheck() {
     }
   }, [currentCandidate, candidates]);
 
-  // Fetch companies AND candidates on mount (two fast reads, parallel)
+ // Fetch companies AND candidates on mount (two fast reads, parallel)
   useEffect(() => {
     Promise.all([
       fetch(`${API}/api/talent-check/companies`).then((r) => r.json()),
@@ -237,30 +226,60 @@ export default function TalentCheck() {
     ])
       .then(([companiesJson, candidatesJson]) => {
         setCompaniesData(companiesJson);
-        const first = companiesJson.companies?.[0] ?? "";
-        setSelectedCompany(first);
-        setSelectedRole(companiesJson.roles_by_company?.[first]?.[0] ?? "");
         setCandidates(candidatesJson);
-        // Default to the first candidate returned by the API
-        const preferredCandidateId = currentCandidate?.candidate_id || currentCandidate?.id;
-        if (preferredCandidateId && candidatesJson.some((c) => (c.candidate_id || c.id) === preferredCandidateId)) {
-          setSelectedCandidate(preferredCandidateId);
-        } else if (candidatesJson.length > 0) {
-          const defaultCand = candidatesJson.find((c) => (c.candidate_id || c.id) === "sameer-singla") || candidatesJson[0];
-          setSelectedCandidate(defaultCand.candidate_id || defaultCand.id);
+
+        // 🌟 AUTOMATION PIPELINE INTERCEPT 🌟
+        if (location.state && location.state.company) {
+          
+          // 1. SAFELY MATCH COMPANY (Snap to DB value)
+          const searchComp = String(location.state.company).toLowerCase();
+          const validCompanies = companiesJson.companies || [];
+          const matchedCompany = validCompanies.find(c => c.toLowerCase().includes(searchComp)) || validCompanies[0];
+          setSelectedCompany(matchedCompany);
+
+          // 2. SAFELY MATCH ROLE (Ignore "Extracted Role" placeholder and snap to DB value)
+          const searchRole = String(location.state.role).toLowerCase();
+          const validRoles = companiesJson.roles_by_company?.[matchedCompany] || [];
+          const matchedRole = validRoles.find(r => r.toLowerCase().includes(searchRole) && !searchRole.includes("extracted")) || validRoles[0];
+          setSelectedRole(matchedRole);
+          
+          // 3. SAFELY MATCH CANDIDATE (Snap to DB value)
+          const searchCand = String(location.state.candidate || "").toLowerCase();
+          const autoCand = candidatesJson.find((c) => 
+            (c.name && c.name.toLowerCase().includes(searchCand)) || 
+            (c.id && c.id.toLowerCase().includes(searchCand))
+          ) || candidatesJson[0];
+          setSelectedCandidate(autoCand?.candidate_id || autoCand?.id);
+          
+          // ONLY render if the pipeline didn't pass an error object
+          if (location.state.scoreJson && Array.isArray(location.state.scoreJson.skillset_gap)) {
+             setResult(location.state.scoreJson);
+          }
+        } else {
+          // Default fallback behavior
+          const first = companiesJson.companies?.[0] ?? "";
+          setSelectedCompany(first);
+          setSelectedRole(companiesJson.roles_by_company?.[first]?.[0] ?? "");
+          
+          const preferredCandidateId = currentCandidate?.candidate_id || currentCandidate?.id;
+          if (preferredCandidateId && candidatesJson.some((c) => (c.candidate_id || c.id) === preferredCandidateId)) {
+            setSelectedCandidate(preferredCandidateId);
+          } else if (candidatesJson.length > 0) {
+            const defaultCand = candidatesJson.find((c) => (c.candidate_id || c.id) === "sameer-singla") || candidatesJson[0];
+            setSelectedCandidate(defaultCand.candidate_id || defaultCand.id);
+          }
         }
       })
       .catch(() => setError("Cannot reach backend. Is the server running on :8000?"));
-  }, []);
+  }, [location.state, currentCandidate]);
 
-  // Update role when company changes
   useEffect(() => {
-    if (!companiesData || !selectedCompany) return;
+    if (!companiesData || !selectedCompany || location.state?.company) return;
     const roles = companiesData.roles_by_company?.[selectedCompany] ?? [];
     setSelectedRole(roles[0] ?? "");
     setResult(null);
     setCompare(null);
-  }, [selectedCompany, companiesData]);
+  }, [selectedCompany, companiesData, location.state]);
 
   const runCheck = useCallback(async () => {
     if (!selectedCompany || !selectedRole || !selectedCandidate) return;
@@ -284,7 +303,10 @@ export default function TalentCheck() {
         throw new Error(err.detail ?? "Unknown error");
       }
       setResult(await checkRes.json());
-      if (compareRes.ok) setCompare(await compareRes.json());
+      
+      const compData = await compareRes.json();
+      if (Array.isArray(compData)) setCompare(compData);
+      
     } catch (e) {
       setError(e.message);
     } finally {
@@ -292,11 +314,17 @@ export default function TalentCheck() {
     }
   }, [selectedCompany, selectedRole, selectedCandidate]);
 
+  // If pipeline navigated here but the pre-score was invalid, click the button automatically!
+  useEffect(() => {
+      if (location.state && location.state.company && selectedCompany && selectedRole && selectedCandidate && !result) {
+          runCheck();
+      }
+  }, [location.state, selectedCompany, selectedRole, selectedCandidate, result, runCheck]);
+
   const roles = companiesData?.roles_by_company?.[selectedCompany] ?? [];
 
   return (
     <div className="tc-page talent-check">
-      {/* ── Header ── */}
       <header className="tc-header">
         <h1>Talent Check</h1>
         <p className="tc-subtitle">
@@ -304,41 +332,24 @@ export default function TalentCheck() {
         </p>
       </header>
 
-      {/* ── Selector row ── */}
       <section className="tc-selectors">
         <div className="sel-group">
           <label htmlFor="company-select">Company</label>
-          <select
-            id="company-select"
-            value={selectedCompany}
-            onChange={(e) => setSelectedCompany(e.target.value)}
-          >
-            {(companiesData?.companies ?? []).map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
+          <select id="company-select" value={selectedCompany} onChange={(e) => setSelectedCompany(e.target.value)}>
+            {(companiesData?.companies ?? []).map((c) => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
 
         <div className="sel-group">
           <label htmlFor="role-select">Role</label>
-          <select
-            id="role-select"
-            value={selectedRole}
-            onChange={(e) => setSelectedRole(e.target.value)}
-          >
-            {roles.map((r) => (
-              <option key={r} value={r}>{r}</option>
-            ))}
+          <select id="role-select" value={selectedRole} onChange={(e) => setSelectedRole(e.target.value)}>
+            {roles.map((r) => <option key={r} value={r}>{r}</option>)}
           </select>
         </div>
 
         <div className="sel-group">
           <label htmlFor="candidate-select">Candidate</label>
-          <select
-            id="candidate-select"
-            value={selectedCandidate}
-            onChange={(e) => setSelectedCandidate(e.target.value)}
-          >
+          <select id="candidate-select" value={selectedCandidate} onChange={(e) => setSelectedCandidate(e.target.value)}>
             {candidates.map((c) => {
               const cid = c.candidate_id || c.id;
               return <option key={cid} value={cid}>{c.name} ({cid})</option>;
@@ -346,25 +357,20 @@ export default function TalentCheck() {
           </select>
         </div>
 
-        <button
-          id="run-check-btn"
-          className="run-btn"
-          onClick={runCheck}
-          disabled={loading || !selectedCompany || !selectedRole}
-        >
+        <button id="run-check-btn" className="run-btn" onClick={runCheck} disabled={loading || !selectedCompany || !selectedRole}>
           {loading ? "Checking…" : "Run Talent Check"}
         </button>
       </section>
 
       {error && <div className="tc-error">⚠️ {error}</div>}
 
-      {/* ── Results ── */}
-      {result && (
+      {/* SAFEGUARD: Only render charts if skillset_gap array exists */}
+      {result && Array.isArray(result.skillset_gap) && (
         <section className="tc-results">
           <div className="results-top">
             <ReadinessDial score={result.readiness_score} />
             <div className="results-meta">
-              <h2>{candidates.find((c) => c.id === result.candidate_id)?.name ?? result.candidate_id}</h2>
+              <h2>{candidates.find((c) => (c.candidate_id || c.id) === result.candidate_id)?.name ?? result.candidate_id}</h2>
               <div className="meta-pill">{result.company}</div>
               <div className="meta-pill role-pill">{selectedRole}</div>
             </div>
@@ -374,7 +380,7 @@ export default function TalentCheck() {
 
           <div className="two-col">
             <SkillRadar gaps={result.skillset_gap} />
-            {compare && <CompareChart results={compare} candidates={candidates} />}
+            {compare && Array.isArray(compare) && <CompareChart results={compare} candidates={candidates} />}
           </div>
 
           <GapTable gaps={result.skillset_gap} />

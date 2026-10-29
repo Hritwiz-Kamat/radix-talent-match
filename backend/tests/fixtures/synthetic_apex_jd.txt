@@ -1,0 +1,16 @@
+Job Title: Systems & Cloud Architect
+Company: Apex Cloud Labs
+Overview:
+We are looking for a Systems & Cloud Architect to lead our distributed infrastructure.
+
+Required Skills:
+- Strong proficiency in Rust or Go required for low-latency engine development.
+- Deep expertise in Distributed Systems and System Design required.
+- Hands-on experience with Docker and Kubernetes required.
+- Proficiency in PostgreSQL and SQL database management required.
+- Strong problem solving and data structures knowledge required.
+
+Preferred Skills:
+- Experience with C++ and Linux kernel concepts preferred.
+- Familiarity with Machine Learning pipelines preferred.
+

@@ -53,7 +53,9 @@ def setup_test_jd():
         ],
     )
     storage.save("jd", "google-swe-test.pdf", jd)
-    return jd
+    yield jd
+    (storage.ROOT / "jd" / "google-swe-test.pdf.json").unlink(missing_ok=True)
+    (storage.ROOT / "results" / "match-ananya-rao-google-swe-test.pdf.json").unlink(missing_ok=True)
 
 
 # ============================================================================

@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Coding Skills (COD)",
+      "candidate_skill": "C++ (COD)",
+      "similarity": 0.85,
+      "reason": "C++ is a programming language that directly satisfies coding skill requirements"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "jd_source_file": "Microsoft - Software Engineer.pdf",
+  "candidate_id": "priya-menon",
+  "match_score": 11,
+  "matched_skills": [
+    {
+      "jd_skill": "Networking",
+      "candidate_skill": "Networking fundamentals",
+      "match_type": "fuzzy",
+      "similarity": 1.0
+    }
+  ],
+  "missing_skills": [
+    {
+      "skill_name": "Data Structures and Algorithms",
+      "category_code": "DSA",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Data Structures and Algorithms."
+    },
+    {
+      "skill_name": "Coding Skills",
+      "category_code": "COD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Coding Skills."
+    },
+    {
+      "skill_name": "Object-Oriented Design",
+      "category_code": "OOD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Object-Oriented Design."
+    },
+    {
+      "skill_name": "Communication",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Communication."
+    },
+    {
+      "skill_name": "Agile Methodologies",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Agile Methodologies."
+    },
+    {
+      "skill_name": "Software Engineering Practices",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Software Engineering Practices."
+    },
+    {
+      "skill_name": "System Design",
+      "category_code": "SYSD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using System Design."
+    },
+    {
+      "skill_name": "Operating Systems",
+      "category_code": "OS",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Operating Systems."
+    },
+    {
+      "skill_name": "Cloud Infrastructure",
+      "category_code": "CLOUD",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Cloud Infrastructure."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "jd_source_file": "Oracle - Associate Software Engineer.pdf",
+  "candidate_id": "priya-menon",
+  "match_score": 0,
+  "matched_skills": [],
+  "missing_skills": [
+    {
+      "skill_name": "Data structures and algorithms",
+      "category_code": "DSA",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Data structures and algorithms."
+    },
+    {
+      "skill_name": "Programming fundamentals",
+      "category_code": "COD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Programming fundamentals."
+    },
+    {
+      "skill_name": "Object-oriented programming",
+      "category_code": "OOD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Object-oriented programming."
+    },
+    {
+      "skill_name": "Quantitative aptitude",
+      "category_code": "APTI",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Quantitative aptitude."
+    },
+    {
+      "skill_name": "Communication and collaboration",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Communication and collaboration."
+    },
+    {
+      "skill_name": "SQL and relational database knowledge",
+      "category_code": "SQL",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using SQL and relational database knowledge."
+    },
+    {
+      "skill_name": "Debugging",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Debugging."
+    },
+    {
+      "skill_name": "Software development lifecycle and Agile",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Software development lifecycle and Agile."
+    },
+    {
+      "skill_name": "Technical documentation",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Technical documentation."
+    },
+    {
+      "skill_name": "Unit testing",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Unit testing."
+    },
+    {
+      "skill_name": "Operating systems",
+      "category_code": "OS",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Operating systems."
+    },
+    {
+      "skill_name": "Banking and financial systems",
+      "category_code": "OTHER",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Banking and financial systems."
+    }
+  ]
+}

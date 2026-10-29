@@ -1,0 +1,16 @@
+{
+  "matches": [
+    {
+      "jd_skill": "SQL and relational database knowledge (SQL)",
+      "candidate_skill": "MySQL (SQL)",
+      "similarity": 0.8,
+      "reason": "MySQL is a relational SQL database, directly relevant."
+    },
+    {
+      "jd_skill": "Communication and collaboration (COMM)",
+      "candidate_skill": "Teamwork / coordination (COMM)",
+      "similarity": 1.0,
+      "reason": "Teamwork and coordination reflect communication and collaboration."
+    }
+  ]
+}

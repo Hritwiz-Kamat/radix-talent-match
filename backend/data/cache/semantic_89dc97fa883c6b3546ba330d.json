@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "SQL query writing and optimization (SQL)",
+      "candidate_skill": "MySQL (SQL)",
+      "similarity": 0.7,
+      "reason": "MySQL is a SQL-based relational database, overlapping with SQL querying."
+    }
+  ]
+}

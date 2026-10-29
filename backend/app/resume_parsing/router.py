@@ -49,8 +49,7 @@ def list_samples() -> list[str]:
     if STORE_RESUMES_DIR.exists():
         for f in STORE_RESUMES_DIR.iterdir():
             if f.is_file() and not f.name.startswith("."):
-                if not any(x in f.name.lower() for x in ["sameer"]):
-                    results.add(f.name)
+                results.add(f.name)
     return sorted(results)
 
 
@@ -98,11 +97,22 @@ async def parse_resume(file: UploadFile = File(...)) -> ExtractedSkillList:
             detail=f"Failed to read text from resume: {e}"
         )
 
+    if ext == "pdf" and len(raw_text.strip()) < 200:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="This PDF looks scanned (no selectable text). Please upload the DOCX or a text-based PDF."
+        )
+
     # 3. Check for existing stored extraction first (skipping poisoned mocks)
     existing = storage.load("resume", file.filename)
     if existing and not _is_mock(existing):
         try:
-            return ExtractedSkillList.model_validate(existing)
+            val = ExtractedSkillList.model_validate(existing)
+            if val.extras is None:
+                val.extras = {}
+            if not val.extras.get("source"):
+                val.extras["source"] = "cache"
+            return val
         except Exception:
             pass
 
@@ -125,6 +135,11 @@ async def parse_resume(file: UploadFile = File(...)) -> ExtractedSkillList:
         slug = Path(file.filename).stem.lower().replace(" ", "-").replace("_", "-")
         profile_data = storage.load("profiles", slug)
         if profile_data:
+            import logging
+            logging.getLogger("resume_parsing").warning(
+                "LLM extraction failed for '%s'; using stored hand-built fixture profile fallback.",
+                file.filename,
+            )
             from app.schemas import CandidateProfile
             prof = CandidateProfile.model_validate(profile_data)
             result = ExtractedSkillList(
@@ -138,6 +153,7 @@ async def parse_resume(file: UploadFile = File(...)) -> ExtractedSkillList:
                     "experience": [i.model_dump() for i in prof.internships],
                     "hackathons": [i.model_dump() for i in prof.hackathons],
                     "certifications": [i.model_dump() for i in prof.certifications],
+                    "source": "stored_fixture_fallback",
                 }
             )
         else:
@@ -145,6 +161,11 @@ async def parse_resume(file: UploadFile = File(...)) -> ExtractedSkillList:
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                 detail=f"Could not extract candidate data from '{file.filename}'. Error: {e}"
             )
+
+    if result.extras is None:
+        result.extras = {}
+    if not result.extras.get("source"):
+        result.extras["source"] = "llm"
 
     # 5. Save genuine extracted result into storage (kind: "resume")
     storage.save("resume", file.filename, result)
@@ -186,7 +207,12 @@ def parse_sample(name: str) -> ExtractedSkillList:
     existing = storage.load("resume", sample_file.name)
     if existing and not _is_mock(existing):
         try:
-            return ExtractedSkillList.model_validate(existing)
+            val = ExtractedSkillList.model_validate(existing)
+            if val.extras is None:
+                val.extras = {}
+            if not val.extras.get("source"):
+                val.extras["source"] = "cache"
+            return val
         except Exception:
             pass
 
@@ -199,6 +225,13 @@ def parse_sample(name: str) -> ExtractedSkillList:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Failed to read text from sample resume: {e}"
+        )
+
+    sample_ext = sample_file.suffix.lower().lstrip(".")
+    if sample_ext == "pdf" and len(raw_text.strip()) < 200:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="This PDF looks scanned (no selectable text). Please upload the DOCX or a text-based PDF."
         )
 
     # Attempt real LLM skill extraction
@@ -219,6 +252,11 @@ def parse_sample(name: str) -> ExtractedSkillList:
         slug = Path(sample_file.name).stem.lower().replace(" ", "-").replace("_", "-")
         profile_data = storage.load("profiles", slug)
         if profile_data:
+            import logging
+            logging.getLogger("resume_parsing").warning(
+                "LLM extraction failed for '%s'; using stored hand-built fixture profile fallback.",
+                sample_file.name,
+            )
             from app.schemas import CandidateProfile
             prof = CandidateProfile.model_validate(profile_data)
             result = ExtractedSkillList(
@@ -232,6 +270,7 @@ def parse_sample(name: str) -> ExtractedSkillList:
                     "experience": [i.model_dump() for i in prof.internships],
                     "hackathons": [i.model_dump() for i in prof.hackathons],
                     "certifications": [i.model_dump() for i in prof.certifications],
+                    "source": "stored_fixture_fallback",
                 }
             )
         else:
@@ -239,6 +278,11 @@ def parse_sample(name: str) -> ExtractedSkillList:
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                 detail=f"Could not extract candidate data from sample '{sample_file.name}'. Error: {e}"
             )
+
+    if result.extras is None:
+        result.extras = {}
+    if not result.extras.get("source"):
+        result.extras["source"] = "llm"
 
     # Save extracted result into storage (kind: "resume")
     storage.save("resume", sample_file.name, result)

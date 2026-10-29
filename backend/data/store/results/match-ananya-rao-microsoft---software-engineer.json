@@ -1,0 +1,69 @@
+{
+  "jd_source_file": "Microsoft - Software Engineer.pdf",
+  "candidate_id": "ananya-rao",
+  "match_score": 32,
+  "matched_skills": [
+    {
+      "jd_skill": "Operating Systems",
+      "candidate_skill": "Operating Systems",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "Object-Oriented Design",
+      "candidate_skill": "Object-Oriented Design",
+      "match_type": "exact",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "Data Structures and Algorithms",
+      "candidate_skill": "Data Structures & Algorithms",
+      "match_type": "fuzzy",
+      "similarity": 0.96
+    }
+  ],
+  "missing_skills": [
+    {
+      "skill_name": "Coding Skills",
+      "category_code": "COD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Coding Skills."
+    },
+    {
+      "skill_name": "Communication",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Communication."
+    },
+    {
+      "skill_name": "Agile Methodologies",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Agile Methodologies."
+    },
+    {
+      "skill_name": "Software Engineering Practices",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Software Engineering Practices."
+    },
+    {
+      "skill_name": "System Design",
+      "category_code": "SYSD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using System Design."
+    },
+    {
+      "skill_name": "Networking",
+      "category_code": "NETW",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Networking."
+    },
+    {
+      "skill_name": "Cloud Infrastructure",
+      "category_code": "CLOUD",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Cloud Infrastructure."
+    }
+  ]
+}

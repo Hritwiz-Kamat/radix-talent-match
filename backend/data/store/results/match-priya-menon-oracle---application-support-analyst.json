@@ -1,0 +1,69 @@
+{
+  "jd_source_file": "Oracle - Application Support Analyst.pdf",
+  "candidate_id": "priya-menon",
+  "match_score": 12,
+  "matched_skills": [
+    {
+      "jd_skill": "Basic SQL querying",
+      "candidate_skill": "SQL (basic)",
+      "match_type": "fuzzy",
+      "similarity": 1.0
+    }
+  ],
+  "missing_skills": [
+    {
+      "skill_name": "Quantitative and logical reasoning",
+      "category_code": "APTI",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Quantitative and logical reasoning."
+    },
+    {
+      "skill_name": "Communication",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Communication."
+    },
+    {
+      "skill_name": "Incident triage and troubleshooting",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Incident triage and troubleshooting."
+    },
+    {
+      "skill_name": "Basic networking",
+      "category_code": "NETW",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Basic networking."
+    },
+    {
+      "skill_name": "Linux fundamentals",
+      "category_code": "OS",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Linux fundamentals."
+    },
+    {
+      "skill_name": "Log and batch/real-time process monitoring",
+      "category_code": "OS",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Log and batch/real-time process monitoring."
+    },
+    {
+      "skill_name": "Networking coursework",
+      "category_code": "NETW",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Networking coursework."
+    },
+    {
+      "skill_name": "Systems administration coursework",
+      "category_code": "OS",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Systems administration coursework."
+    },
+    {
+      "skill_name": "Ticketing and incident system exposure",
+      "category_code": "OTHER",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Ticketing and incident system exposure."
+    }
+  ]
+}

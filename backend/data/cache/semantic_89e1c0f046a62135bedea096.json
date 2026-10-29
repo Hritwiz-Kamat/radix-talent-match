@@ -1,0 +1,16 @@
+{
+  "matches": [
+    {
+      "jd_skill": "BI and data visualization (OTHER)",
+      "candidate_skill": "Power BI (OTHER)",
+      "similarity": 0.9,
+      "reason": "Power BI is a direct BI and data visualization tool."
+    },
+    {
+      "jd_skill": "Predictive model building and evaluation (AI)",
+      "candidate_skill": "scikit-learn (AI)",
+      "similarity": 0.85,
+      "reason": "scikit-learn supports predictive model building and evaluation."
+    }
+  ]
+}

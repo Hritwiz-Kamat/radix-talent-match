@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Operating Systems (OS)",
+      "candidate_skill": "Linux (OS)",
+      "similarity": 1.0,
+      "reason": "Linux is a concrete operating system and directly satisfies the Operating Systems skill."
+    }
+  ]
+}

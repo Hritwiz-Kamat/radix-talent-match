@@ -1,0 +1,22 @@
+ELENA ROSTOVA
+elena.rostova@techmail.io | +1 555 019 2834 | Seattle, WA
+LinkedIn: https://linkedin.com/in/elena-rostova | GitHub: https://github.com/erostova
+
+PROFESSIONAL SUMMARY
+Systems and Cloud Engineer with deep expertise in distributed backends, high-throughput microservices, and Kubernetes infrastructure.
+
+EDUCATION
+Master of Science in Computer Science, University of Washington, 2022
+
+TECHNICAL COMPETENCIES
+Languages: Rust, Go, Python
+Cloud & DevOps: Docker, Kubernetes, AWS, CI/CD
+Databases: PostgreSQL, Redis, SQL
+Architecture: Distributed Systems, System Design, Microservices, Data Structures, Algorithms
+
+PROFESSIONAL EXPERIENCE
+Senior Backend Engineer | CloudScale Inc. (2022 - Present)
+- Designed distributed data processing engine in Rust and Go handling 100k requests/second.
+- Deployed containerized microservices to Kubernetes clusters on AWS with automated CI/CD.
+- Optimized PostgreSQL database schema and complex analytical queries.
+

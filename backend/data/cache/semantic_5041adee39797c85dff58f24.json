@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "SQL writing and query optimization (SQL)",
+      "candidate_skill": "MySQL (SQL)",
+      "similarity": 0.65,
+      "reason": "MySQL is a SQL database, but candidate basic and lacks advanced optimization."
+    }
+  ]
+}

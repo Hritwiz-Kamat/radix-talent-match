@@ -1,0 +1,99 @@
+{
+  "source_type": "resume",
+  "source_file": "Rohan Verma.pdf",
+  "company": null,
+  "role": "Software Engineer, Data Scientist, Backend Engineer",
+  "skills": [
+    {
+      "skill_name": "C++",
+      "category_code": "COD",
+      "evidence": "Technical Skills: C++",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Python",
+      "category_code": "COD",
+      "evidence": "Technical Skills: Python; open-source contributor (2 merged PRs to a mid-size Python library)",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "SQL",
+      "category_code": "SQL",
+      "evidence": "Technical Skills: SQL",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Data Structures & Algorithms",
+      "category_code": "DSA",
+      "evidence": "Technical Skills: Data Structures & Algorithms; Achievements: 500+ problems solved across competitive programming platforms",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "System Design",
+      "category_code": "SYSD",
+      "evidence": "Designed and built a scalable notification service (pub-sub architecture, horizontally-scalable workers) as a personal system-design project, documented with architecture diagrams",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Object-Oriented Design",
+      "category_code": "OOD",
+      "evidence": "Wrote a technical blog series on object-oriented design patterns used in real-world systems",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Operating Systems",
+      "category_code": "OS",
+      "evidence": "Technical Skills: Operating Systems",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "basic Machine Learning",
+      "category_code": "AI",
+      "evidence": "Technical Skills: basic Machine Learning; Built a recommendation engine using collaborative filtering on a movie-ratings dataset, evaluated with precision/recall",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Git",
+      "category_code": "SWE",
+      "evidence": "Technical Skills: Git; Software Engineering intern at a Series-B startup — shipped a feature end-to-end including tests and CI",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Docker",
+      "category_code": "CLOUD",
+      "evidence": "Technical Skills: Docker",
+      "confidence": "high",
+      "importance": null
+    }
+  ],
+  "extras": {
+    "name": "Rohan Verma",
+    "education": "B.Tech, Computer Science and Engineering, Class of 2026 — CGPA 9.1 / 10",
+    "experience": [
+      {
+        "title": "Software Engineering Intern",
+        "organization": "Series-B Startup",
+        "description": "Shipped a feature end-to-end including tests and CI",
+        "year": null
+      }
+    ],
+    "hackathons": [
+      {
+        "title": "National Inter-College Hackathon",
+        "organization": null,
+        "description": "Built a real-time collaborative document editor",
+        "year": null
+      }
+    ],
+    "source": "llm"
+  }
+}

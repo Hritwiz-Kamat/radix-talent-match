@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Networking (NETW)",
+      "candidate_skill": "Computer Networks (NETW)",
+      "similarity": 1.0,
+      "reason": "Computer Networks directly covers networking fundamentals."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Anomaly detection and metric explanation (DSA)",
+      "candidate_skill": "scikit-learn (AI)",
+      "similarity": 0.8,
+      "reason": "scikit-learn provides anomaly detection algorithms such as Isolation Forest and One-Class SVM."
+    },
+    {
+      "jd_skill": "Dashboard design and reporting (OTHER)",
+      "candidate_skill": "Power BI (OTHER)",
+      "similarity": 0.9,
+      "reason": "Power BI is a direct tool for dashboard design and reporting."
+    }
+  ]
+}

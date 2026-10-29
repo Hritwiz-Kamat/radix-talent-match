@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Basic networking (NETW)",
+      "candidate_skill": "Computer Networks (NETW)",
+      "similarity": 0.8,
+      "reason": "Computer networking fundamentals cover basic networking concepts."
+    }
+  ]
+}

@@ -18,7 +18,7 @@
       "candidate_level": 8,
       "gap": false,
       "gap_size": 0,
-      "explanation": "2 skill(s): Python (pandas, scikit-learn)(high), Java(low) -> base 7 + bonus 1 = 8",
+      "explanation": "2 skill(s): Python(high), basic Java(medium) -> base 7 + bonus 1 = 8",
       "company_aggregate_level": 8,
       "role_weight": 1.0
     },
@@ -45,10 +45,10 @@
     {
       "category_code": "COMM",
       "required_level": 4,
-      "candidate_level": 7,
+      "candidate_level": 5,
       "gap": false,
       "gap_size": 0,
-      "explanation": "1 skill(s): Presenting to non-technical audiences(high) -> base 7 + bonus 0 = 7",
+      "explanation": "1 skill(s): Communication(medium) -> base 5 + bonus 0 = 5",
       "company_aggregate_level": 7,
       "role_weight": 0.6
     },
@@ -58,7 +58,7 @@
       "candidate_level": 10,
       "gap": false,
       "gap_size": 0,
-      "explanation": "4 skill(s): Machine learning (logistic regression)(high), Statistics(high), A/B testing(medium), Anomaly detection(medium) -> base 7 + bonus 3 = 10",
+      "explanation": "4 skill(s): Statistics(high), pandas(medium), scikit-learn(medium), A/B testing basics(medium) -> base 7 + bonus 3 = 10",
       "company_aggregate_level": 7,
       "role_weight": 0.1
     },
@@ -75,10 +75,10 @@
     {
       "category_code": "SQL",
       "required_level": 2,
-      "candidate_level": 8,
+      "candidate_level": 7,
       "gap": false,
       "gap_size": 0,
-      "explanation": "2 skill(s): SQL(high), Database schema design(high) -> base 7 + bonus 1 = 8",
+      "explanation": "1 skill(s): SQL(high) -> base 7 + bonus 0 = 7",
       "company_aggregate_level": 8,
       "role_weight": 0.3
     },

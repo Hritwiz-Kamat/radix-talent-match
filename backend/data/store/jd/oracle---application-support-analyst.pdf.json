@@ -5,54 +5,77 @@
   "role": "Application Support Analyst",
   "skills": [
     {
-      "skill_name": "SQL (basic)",
+      "skill_name": "Basic SQL querying",
       "category_code": "SQL",
-      "evidence": "Comfort with basic SQL: simple SELECT/WHERE queries and understanding primary keys",
+      "evidence": "Comfort with basic SQL simple SELECT/WHERE queries and understanding of primary keys",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Linux basics",
+      "skill_name": "Linux fundamentals",
       "category_code": "OS",
-      "evidence": "Basic command-line usage, log file inspection, batch vs real-time processing",
+      "evidence": "Operating systems and Linux fundamentals basic command-line usage what a log file is batch vs real-time processing",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Networking fundamentals",
+      "skill_name": "Basic networking",
       "category_code": "NETW",
-      "evidence": "What an IP address is, client-server architecture fundamentals, latency",
+      "evidence": "Basic networking knowledge what an IP address is client-server architecture fundamentals and what latency means in practice",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Analytical reasoning",
+      "skill_name": "Quantitative and logical reasoning",
       "category_code": "APTI",
-      "evidence": "Data interpretation from tables, arithmetic, and structured problem-solving",
+      "evidence": "Strong quantitative and logical reasoning data interpretation from tables arithmetic and structured problem-solving",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Team coordination",
+      "skill_name": "Communication",
       "category_code": "COMM",
-      "evidence": "Able to explain a technical issue to a non-technical client, stay calm during incidents",
+      "evidence": "Excellent communication skills able to explain a technical issue to a non-technical client stay calm during an escalation and document what happened clearly",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Incident troubleshooting",
-      "category_code": "OTHER",
-      "evidence": "Triage, investigate, and resolve incidents raised by banking clients within SLA",
+      "skill_name": "Incident triage and troubleshooting",
+      "category_code": "SWE",
+      "evidence": "Triage investigate and resolve incidents raised by banking clients within SLA coordinate with development teams on escalations that require a code fix",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Ticketing tools",
+      "skill_name": "Log and batch/real-time process monitoring",
+      "category_code": "OS",
+      "evidence": "Monitor logs and batch/real-time processes to catch issues early",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Ticketing and incident system exposure",
       "category_code": "OTHER",
-      "evidence": "Coordinate with development teams on escalations, monitoring tools",
+      "evidence": "Prior exposure to a ticketing/incident system",
+      "confidence": "medium",
+      "importance": "preferred"
+    },
+    {
+      "skill_name": "Networking coursework",
+      "category_code": "NETW",
+      "evidence": "Coursework in networking",
+      "confidence": "medium",
+      "importance": "preferred"
+    },
+    {
+      "skill_name": "Systems administration coursework",
+      "category_code": "OS",
+      "evidence": "Coursework in systems administration",
       "confidence": "medium",
       "importance": "preferred"
     }
   ],
-  "extras": {}
+  "extras": {
+    "source": "llm"
+  }
 }

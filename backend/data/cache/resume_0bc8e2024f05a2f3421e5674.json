@@ -1,0 +1,100 @@
+{
+  "source_type": "resume",
+  "source_file": "Karthik Subramaniam.pdf",
+  "company": null,
+  "role": "Data Analyst, Data Scientist",
+  "skills": [
+    {
+      "skill_name": "SQL",
+      "category_code": "SQL",
+      "evidence": "Technical Skills: SQL",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Python",
+      "category_code": "COD",
+      "evidence": "Python (pandas, scikit-learn)",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "pandas",
+      "category_code": "AI",
+      "evidence": "Python (pandas, scikit-learn)",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "scikit-learn",
+      "category_code": "AI",
+      "evidence": "Python (pandas, scikit-learn)",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Power BI",
+      "category_code": "OTHER",
+      "evidence": "Power BI",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Statistics",
+      "category_code": "AI",
+      "evidence": "Statistics",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "A/B testing basics",
+      "category_code": "AI",
+      "evidence": "A/B testing basics",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Excel",
+      "category_code": "OTHER",
+      "evidence": "Excel",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "basic Java",
+      "category_code": "COD",
+      "evidence": "basic Java",
+      "confidence": "medium",
+      "importance": null
+    }
+  ],
+  "extras": {
+    "name": "Karthik Subramaniam",
+    "education": "B.Tech, Computer Science and Engineering, Class of 2026 — CGPA 8.2 / 10",
+    "experience": [
+      {
+        "title": "Data Analytics Intern",
+        "organization": "Fintech Startup",
+        "description": "Built two recurring dashboards used by the growth team",
+        "year": null
+      }
+    ],
+    "hackathons": [
+      {
+        "title": "Inter-college data visualization competition",
+        "organization": null,
+        "description": "Runner-up",
+        "year": null
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Google Data Analytics Certificate",
+        "organization": "Google",
+        "description": null,
+        "year": null
+      }
+    ],
+    "source": "llm"
+  }
+}

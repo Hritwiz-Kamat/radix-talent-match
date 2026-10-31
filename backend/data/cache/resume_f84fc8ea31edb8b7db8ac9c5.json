@@ -1,0 +1,92 @@
+{
+  "source_type": "resume",
+  "source_file": "Ananya Rao.pdf",
+  "company": null,
+  "role": "Software Engineer, Backend Engineer",
+  "skills": [
+    {
+      "skill_name": "C++",
+      "category_code": "COD",
+      "evidence": "Built a multithreaded job scheduler in C++",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Python",
+      "category_code": "COD",
+      "evidence": "Python",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Java",
+      "category_code": "COD",
+      "evidence": "Designed a parking-lot management system in Java",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Data Structures & Algorithms",
+      "category_code": "DSA",
+      "evidence": "Solved 350+ problems on competitive programming platforms",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Operating Systems",
+      "category_code": "OS",
+      "evidence": "Operating Systems",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Computer Networks",
+      "category_code": "NETW",
+      "evidence": "Computer Networks",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Object-Oriented Design",
+      "category_code": "OOD",
+      "evidence": "Object-Oriented Design",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Git",
+      "category_code": "SWE",
+      "evidence": "Git",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Linux",
+      "category_code": "OS",
+      "evidence": "Linux",
+      "confidence": "high",
+      "importance": null
+    }
+  ],
+  "extras": {
+    "name": "Ananya Rao",
+    "education": "B.Tech, Computer Science and Engineering, Class of 2026 — CGPA 8.6 / 10",
+    "experience": [
+      {
+        "title": "Summer Intern, Backend Team",
+        "organization": "Mid-size product startup",
+        "description": "Shipped a rate-limiter used in production",
+        "year": null
+      }
+    ],
+    "hackathons": [
+      {
+        "title": "National-level 24-hour Hackathon Finalist",
+        "organization": null,
+        "description": "Built a real-time chat backend",
+        "year": null
+      }
+    ],
+    "source": "llm"
+  }
+}

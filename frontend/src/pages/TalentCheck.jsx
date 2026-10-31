@@ -144,7 +144,7 @@ function SkillRadar({ gaps }) {
 
 function CompareChart({ results, candidates }) {
   const data = results.map((r) => ({
-    name: candidates.find((c) => c.id === r.candidate_id)?.name ?? r.candidate_id,
+    name: candidates.find((c) => (c.candidate_id || c.id) === r.candidate_id)?.name ?? r.candidate_id,
     score: r.readiness_score,
   }));
 
@@ -213,12 +213,11 @@ export default function TalentCheck() {
   useEffect(() => {
     const preferredCandidateId = currentCandidate?.candidate_id || currentCandidate?.id;
     if (preferredCandidateId && candidates.some((c) => (c.candidate_id || c.id) === preferredCandidateId)) {
-      const cId = currentCandidate?.candidate_id || currentCandidate?.id;
-      setSelectedCandidate(cId);
+      setSelectedCandidate(preferredCandidateId);
     }
   }, [currentCandidate, candidates]);
 
- // Fetch companies AND candidates on mount (two fast reads, parallel)
+  // Fetch companies AND candidates on mount (two fast reads, parallel)
   useEffect(() => {
     Promise.all([
       fetch(`${API}/api/talent-check/companies`).then((r) => r.json()),
@@ -228,58 +227,40 @@ export default function TalentCheck() {
         setCompaniesData(companiesJson);
         setCandidates(candidatesJson);
 
-        // 🌟 AUTOMATION PIPELINE INTERCEPT 🌟
-        if (location.state && location.state.company) {
-          
-          // 1. SAFELY MATCH COMPANY (Snap to DB value)
-          const searchComp = String(location.state.company).toLowerCase();
-          const validCompanies = companiesJson.companies || [];
-          const matchedCompany = validCompanies.find(c => c.toLowerCase().includes(searchComp)) || validCompanies[0];
-          setSelectedCompany(matchedCompany);
+        const companiesList = companiesJson.companies || [];
+        const stateComp = location.state?.company;
+        const initialCompany = stateComp && companiesList.includes(stateComp)
+          ? stateComp
+          : companiesList[0] || "";
+        setSelectedCompany(initialCompany);
 
-          // 2. SAFELY MATCH ROLE (Ignore "Extracted Role" placeholder and snap to DB value)
-          const searchRole = String(location.state.role).toLowerCase();
-          const validRoles = companiesJson.roles_by_company?.[matchedCompany] || [];
-          const matchedRole = validRoles.find(r => r.toLowerCase().includes(searchRole) && !searchRole.includes("extracted")) || validRoles[0];
-          setSelectedRole(matchedRole);
-          
-          // 3. SAFELY MATCH CANDIDATE (Snap to DB value)
-          const searchCand = String(location.state.candidate || "").toLowerCase();
-          const autoCand = candidatesJson.find((c) => 
-            (c.name && c.name.toLowerCase().includes(searchCand)) || 
-            (c.id && c.id.toLowerCase().includes(searchCand))
-          ) || candidatesJson[0];
-          setSelectedCandidate(autoCand?.candidate_id || autoCand?.id);
-          
-          // ONLY render if the pipeline didn't pass an error object
-          if (location.state.scoreJson && Array.isArray(location.state.scoreJson.skillset_gap)) {
-             setResult(location.state.scoreJson);
-          }
-        } else {
-          // Default fallback behavior
-          const first = companiesJson.companies?.[0] ?? "";
-          setSelectedCompany(first);
-          setSelectedRole(companiesJson.roles_by_company?.[first]?.[0] ?? "");
-          
-          const preferredCandidateId = currentCandidate?.candidate_id || currentCandidate?.id;
-          if (preferredCandidateId && candidatesJson.some((c) => (c.candidate_id || c.id) === preferredCandidateId)) {
-            setSelectedCandidate(preferredCandidateId);
-          } else if (candidatesJson.length > 0) {
-            const defaultCand = candidatesJson.find((c) => (c.candidate_id || c.id) === "sameer-singla") || candidatesJson[0];
-            setSelectedCandidate(defaultCand.candidate_id || defaultCand.id);
-          }
+        const rolesList = companiesJson.roles_by_company?.[initialCompany] || [];
+        const stateRole = location.state?.role;
+        const initialRole = stateRole && rolesList.includes(stateRole)
+          ? stateRole
+          : rolesList[0] || "";
+        setSelectedRole(initialRole);
+
+        const stateCandId = location.state?.candidateId;
+        const preferredCandidateId = stateCandId || currentCandidate?.candidate_id || currentCandidate?.id;
+        if (preferredCandidateId && candidatesJson.some((c) => (c.candidate_id || c.id) === preferredCandidateId)) {
+          setSelectedCandidate(preferredCandidateId);
+        } else if (candidatesJson.length > 0) {
+          setSelectedCandidate(candidatesJson[0].candidate_id || candidatesJson[0].id);
         }
       })
       .catch(() => setError("Cannot reach backend. Is the server running on :8000?"));
   }, [location.state, currentCandidate]);
 
   useEffect(() => {
-    if (!companiesData || !selectedCompany || location.state?.company) return;
+    if (!companiesData || !selectedCompany) return;
     const roles = companiesData.roles_by_company?.[selectedCompany] ?? [];
-    setSelectedRole(roles[0] ?? "");
+    if (!roles.includes(selectedRole)) {
+      setSelectedRole(roles[0] ?? "");
+    }
     setResult(null);
     setCompare(null);
-  }, [selectedCompany, companiesData, location.state]);
+  }, [selectedCompany, companiesData, selectedRole]);
 
   const runCheck = useCallback(async () => {
     if (!selectedCompany || !selectedRole || !selectedCandidate) return;
@@ -303,23 +284,16 @@ export default function TalentCheck() {
         throw new Error(err.detail ?? "Unknown error");
       }
       setResult(await checkRes.json());
-      
+
       const compData = await compareRes.json();
       if (Array.isArray(compData)) setCompare(compData);
-      
+
     } catch (e) {
       setError(e.message);
     } finally {
       setLoading(false);
     }
   }, [selectedCompany, selectedRole, selectedCandidate]);
-
-  // If pipeline navigated here but the pre-score was invalid, click the button automatically!
-  useEffect(() => {
-      if (location.state && location.state.company && selectedCompany && selectedRole && selectedCandidate && !result) {
-          runCheck();
-      }
-  }, [location.state, selectedCompany, selectedRole, selectedCandidate, result, runCheck]);
 
   const roles = companiesData?.roles_by_company?.[selectedCompany] ?? [];
 

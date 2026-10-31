@@ -5,61 +5,70 @@
   "role": "Data Analyst",
   "skills": [
     {
-      "skill_name": "SQL",
+      "skill_name": "SQL query writing and optimization",
       "category_code": "SQL",
       "evidence": "Write and optimize SQL queries against large production datasets",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Database schema design",
+      "skill_name": "Database schema design and normalization strategy",
       "category_code": "SQL",
-      "evidence": "Design schemas for telemetry and usage data, normalize vs denormalize",
+      "evidence": "Design schemas for telemetry and usage data, and know when to normalize vs. denormalize",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Quantitative Reasoning",
+      "skill_name": "Quantitative reasoning",
       "category_code": "APTI",
-      "evidence": "Interpreting trends, sampling, probability, and reasoning with data tables",
+      "evidence": "Solid quantitative reasoning - interpreting trends, sampling, probability, and reasoning with data tables under ambiguity",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Applied Statistics",
+      "skill_name": "Applied statistics and machine learning literacy",
       "category_code": "AI",
-      "evidence": "Basic applied statistics/ML literacy: regression vs classification, overfitting",
-      "confidence": "high",
+      "evidence": "Basic applied statistics/ML literacy: regression vs. classification, what overfitting means, and how to sanity-check a model's output",
+      "confidence": "medium",
       "importance": "required"
     },
     {
-      "skill_name": "Power BI / dashboards",
-      "category_code": "OTHER",
-      "evidence": "Build dashboards and reporting that stakeholders actually use",
-      "confidence": "high",
-      "importance": "required"
-    },
-    {
-      "skill_name": "Anomaly detection",
-      "category_code": "AI",
+      "skill_name": "Anomaly detection and metric explanation",
+      "category_code": "DSA",
       "evidence": "Detect and explain anomalies in usage or business metrics",
       "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Dashboard design and reporting",
+      "category_code": "OTHER",
+      "evidence": "Build dashboards and reporting that stakeholders actually use",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Data visualization tool experience",
+      "category_code": "OTHER",
+      "evidence": "Experience with a visualization tool (Power BI or similar)",
+      "confidence": "medium",
       "importance": "preferred"
     },
     {
-      "skill_name": "Presenting to non-technical audiences",
+      "skill_name": "Stakeholder communication and decision translation",
       "category_code": "COMM",
-      "evidence": "Translating a dashboard or analysis into a decision a non-technical leader can act on",
+      "evidence": "Communicate insights clearly to non-technical stakeholders and defend your methodology",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Excel",
-      "category_code": "OTHER",
-      "evidence": "Hands-on reporting tools and data modeling",
+      "skill_name": "Handling ambiguous requirements",
+      "category_code": "COMM",
+      "evidence": "Comfort with ambiguous or incomplete requirements, and the initiative to clarify them",
       "confidence": "medium",
-      "importance": "preferred"
+      "importance": "required"
     }
   ],
-  "extras": {}
+  "extras": {
+    "source": "llm"
+  }
 }

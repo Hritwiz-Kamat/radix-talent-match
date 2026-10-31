@@ -364,6 +364,24 @@ export default function ResumeParsing() {
         </div>
       )}
 
+      {/* Source Banner for Fallback / Heuristic */}
+      {result && (result.extras?.source === "stored_fixture_fallback" || result.extras?.source === "heuristic") && (
+        <div
+          style={{
+            marginBottom: 20,
+            padding: "12px 16px",
+            borderRadius: 8,
+            background: "#fffbeb",
+            color: "#b45309",
+            border: "1px solid #fde68a",
+            fontSize: 14,
+            fontWeight: 500,
+          }}
+        >
+          ⚠️ AI extraction was unavailable; showing a stored/approximate result.
+        </div>
+      )}
+
       {/* Parsed Output Details */}
       {result && (
         <div style={{ display: "grid", gap: 20 }}>

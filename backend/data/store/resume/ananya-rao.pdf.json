@@ -2,106 +2,91 @@
   "source_type": "resume",
   "source_file": "Ananya Rao.pdf",
   "company": null,
-  "role": null,
+  "role": "Software Engineer, Backend Engineer",
   "skills": [
     {
       "skill_name": "C++",
       "category_code": "COD",
-      "evidence": "multithreaded job scheduler in C++",
+      "evidence": "Technical Skills: C++, Python, Java, Data Structures & Algorithms, Operating Systems, Computer Networks, Object-Oriented Design, Git, Linux",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Python",
       "category_code": "COD",
-      "evidence": "listed in technical skills",
-      "confidence": "medium",
+      "evidence": "Technical Skills: C++, Python, Java, Data Structures & Algorithms, Operating Systems, Computer Networks, Object-Oriented Design, Git, Linux",
+      "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Java",
       "category_code": "COD",
-      "evidence": "parking-lot system in Java",
+      "evidence": "Technical Skills: C++, Python, Java, Data Structures & Algorithms, Operating Systems, Computer Networks, Object-Oriented Design, Git, Linux",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Data Structures & Algorithms",
       "category_code": "DSA",
-      "evidence": "350+ competitive programming problems; mentors juniors on DSA",
+      "evidence": "Solved 350+ problems on competitive programming platforms; mentors juniors on DSA through the college coding club",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Operating Systems",
       "category_code": "OS",
-      "evidence": "simulated Round Robin/Priority/SJF scheduling",
+      "evidence": "Technical Skills: C++, Python, Java, Data Structures & Algorithms, Operating Systems, Computer Networks, Object-Oriented Design, Git, Linux",
       "confidence": "high",
-      "importance": null
-    },
-    {
-      "skill_name": "Linux",
-      "category_code": "OS",
-      "evidence": "listed in technical skills",
-      "confidence": "medium",
       "importance": null
     },
     {
       "skill_name": "Computer Networks",
       "category_code": "NETW",
-      "evidence": "listed in technical skills",
-      "confidence": "medium",
+      "evidence": "Technical Skills: C++, Python, Java, Data Structures & Algorithms, Operating Systems, Computer Networks, Object-Oriented Design, Git, Linux",
+      "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Object-Oriented Design",
       "category_code": "OOD",
-      "evidence": "Factory and Strategy patterns in parking-lot design",
-      "confidence": "high",
-      "importance": null
-    },
-    {
-      "skill_name": "Distributed systems design",
-      "category_code": "SYSD",
-      "evidence": "distributed URL shortener with Redis cache, horizontally scalable API",
+      "evidence": "Technical Skills: C++, Python, Java, Data Structures & Algorithms, Operating Systems, Computer Networks, Object-Oriented Design, Git, Linux",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Git",
       "category_code": "SWE",
-      "evidence": "listed in technical skills",
-      "confidence": "medium",
+      "evidence": "Technical Skills: C++, Python, Java, Data Structures & Algorithms, Operating Systems, Computer Networks, Object-Oriented Design, Git, Linux",
+      "confidence": "high",
       "importance": null
     },
     {
-      "skill_name": "Production backend engineering",
-      "category_code": "SWE",
-      "evidence": "shipped a rate-limiter used in production during internship",
+      "skill_name": "Linux",
+      "category_code": "OS",
+      "evidence": "Technical Skills: C++, Python, Java, Data Structures & Algorithms, Operating Systems, Computer Networks, Object-Oriented Design, Git, Linux",
       "confidence": "high",
       "importance": null
     }
   ],
   "extras": {
     "name": "Ananya Rao",
-    "email": null,
-    "education": "B.Tech CSE, Class of 2026, CGPA 8.6",
+    "education": "B.Tech, Computer Science and Engineering, Class of 2026 — CGPA 8.6 / 10",
     "experience": [
       {
-        "title": "Backend intern",
-        "organization": "mid-size product startup",
-        "description": "shipped a production rate-limiter",
+        "title": "Summer Intern, Backend Team",
+        "organization": "Mid-size product startup",
+        "description": "Shipped a rate-limiter used in production",
         "year": null
       }
     ],
     "hackathons": [
       {
-        "title": "Finalist, national 24-hour hackathon",
+        "title": "National-level 24-hour Hackathon Finalist",
         "organization": null,
-        "description": "real-time chat backend",
+        "description": "Built a real-time chat backend",
         "year": null
       }
     ],
-    "certifications": []
+    "source": "llm"
   }
 }

@@ -1,0 +1,75 @@
+{
+  "jd_source_file": "Google LLC - Data Scientist.pdf",
+  "candidate_id": "rohan-verma",
+  "match_score": 11,
+  "matched_skills": [
+    {
+      "jd_skill": "SQL writing and query optimization",
+      "candidate_skill": "SQL",
+      "match_type": "fuzzy",
+      "similarity": 1.0
+    }
+  ],
+  "missing_skills": [
+    {
+      "skill_name": "Quantitative and analytical reasoning",
+      "category_code": "APTI",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Quantitative and analytical reasoning."
+    },
+    {
+      "skill_name": "Communication of technical findings",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Communication of technical findings."
+    },
+    {
+      "skill_name": "Cross-functional collaboration with engineering and product teams",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Cross-functional collaboration with engineering and product teams."
+    },
+    {
+      "skill_name": "A/B test design and experiment interpretation",
+      "category_code": "AI",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using A/B test design and experiment interpretation."
+    },
+    {
+      "skill_name": "Foundational machine learning knowledge",
+      "category_code": "AI",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Foundational machine learning knowledge."
+    },
+    {
+      "skill_name": "Predictive model building and evaluation",
+      "category_code": "AI",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Predictive model building and evaluation."
+    },
+    {
+      "skill_name": "Database schema design for event or telemetry data",
+      "category_code": "SQL",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Database schema design for event or telemetry data."
+    },
+    {
+      "skill_name": "Applied data science portfolio",
+      "category_code": "AI",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Applied data science portfolio."
+    },
+    {
+      "skill_name": "BI and data visualization",
+      "category_code": "OTHER",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using BI and data visualization."
+    },
+    {
+      "skill_name": "Experimentation platform exposure",
+      "category_code": "OTHER",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Experimentation platform exposure."
+    }
+  ]
+}

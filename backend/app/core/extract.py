@@ -318,7 +318,12 @@ def extract_skills(
 
     if use_cache and cache_file.exists():
         try:
-            return ExtractedSkillList(**json.loads(cache_file.read_text(encoding="utf-8")))
+            cached = ExtractedSkillList(**json.loads(cache_file.read_text(encoding="utf-8")))
+            if cached.extras is None:
+                cached.extras = {}
+            if not cached.extras.get("source"):
+                cached.extras["source"] = "cache"
+            return cached
         except Exception:
             pass
 
@@ -362,6 +367,7 @@ def extract_skills(
             problems = _gate(skills)
             if not problems:
                 last_error = None
+                final_extras["source"] = "llm"
                 break
             last_error = "; ".join(problems)
         except (ValueError, ValidationError) as e:
@@ -396,7 +402,8 @@ def extract_skills(
         # If deterministic found skills, we use them
         if result.skills:
             skills = result.skills
-            final_extras = result.extras
+            final_extras = dict(result.extras or {})
+            final_extras["source"] = "heuristic" 
         else:
             raise RuntimeError(
                 f"Extraction failed: {last_error or 'No skills could be identified in the document.'}"

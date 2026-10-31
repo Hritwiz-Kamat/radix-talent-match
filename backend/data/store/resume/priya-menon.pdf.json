@@ -2,92 +2,99 @@
   "source_type": "resume",
   "source_file": "Priya Menon.pdf",
   "company": null,
-  "role": null,
+  "role": "Application Support Analyst, Associate Software Engineer",
   "skills": [
     {
       "skill_name": "SQL (basic)",
       "category_code": "SQL",
-      "evidence": "MySQL backend in attendance tracker; 'SQL (basic)'",
-      "confidence": "low",
+      "evidence": "SQL (basic)",
+      "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Java",
       "category_code": "COD",
-      "evidence": "attendance tracker built in Java",
+      "evidence": "Built a simple student attendance tracker using Java and a MySQL backend",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "MySQL",
+      "category_code": "SQL",
+      "evidence": "MySQL backend",
       "confidence": "medium",
       "importance": null
     },
     {
       "skill_name": "Linux basics",
       "category_code": "OS",
-      "evidence": "listed as basics",
-      "confidence": "low",
+      "evidence": "Linux basics",
+      "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Networking fundamentals",
       "category_code": "NETW",
-      "evidence": "listed; Cisco Networking Basics course",
-      "confidence": "medium",
-      "importance": null
-    },
-    {
-      "skill_name": "Incident troubleshooting",
-      "category_code": "OTHER",
-      "evidence": "first-level troubleshooting and escalations at IT support desk",
-      "confidence": "medium",
-      "importance": null
-    },
-    {
-      "skill_name": "Ticketing tools",
-      "category_code": "OTHER",
-      "evidence": "exposure to ticketing tools; helpdesk simulation",
-      "confidence": "low",
+      "evidence": "Networking fundamentals",
+      "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "MS Excel",
       "category_code": "OTHER",
-      "evidence": "listed in technical skills",
-      "confidence": "low",
+      "evidence": "MS Excel",
+      "confidence": "high",
       "importance": null
     },
     {
-      "skill_name": "Team coordination",
-      "category_code": "COMM",
-      "evidence": "volunteer coordinator for college technical fest",
+      "skill_name": "Ticketing tools",
+      "category_code": "OTHER",
+      "evidence": "exposure to ticketing tools",
       "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "First-level troubleshooting",
+      "category_code": "SWE",
+      "evidence": "handled first-level troubleshooting and escalations",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Teamwork / coordination",
+      "category_code": "COMM",
+      "evidence": "Volunteer coordinator for a college technical fest, coordinating logistics across teams",
+      "confidence": "high",
       "importance": null
     }
   ],
   "extras": {
     "name": "Priya Menon",
-    "email": null,
-    "education": "B.Tech IT, Class of 2026, CGPA 7.4",
+    "education": "B.Tech, Information Technology, Class of 2026 — CGPA 7.4 / 10",
     "experience": [
       {
-        "title": "Summer intern, IT support desk",
-        "organization": "local business",
-        "description": null,
+        "title": "Summer Intern, IT Support Desk",
+        "organization": "Local business",
+        "description": "Handled first-level troubleshooting and escalations",
         "year": null
       }
     ],
     "hackathons": [
       {
-        "title": "Participant, 12-hour campus hackathon (non-finalist)",
+        "title": "12-hour campus hackathon",
         "organization": null,
-        "description": null,
+        "description": "Participated (non-finalist)",
         "year": null
       }
     ],
     "certifications": [
       {
-        "title": "Cisco Networking Basics (online course)",
-        "organization": null,
-        "description": null,
+        "title": "Cisco Networking Basics",
+        "organization": "Cisco",
+        "description": "Online course",
         "year": null
       }
-    ]
+    ],
+    "source": "llm"
   }
 }

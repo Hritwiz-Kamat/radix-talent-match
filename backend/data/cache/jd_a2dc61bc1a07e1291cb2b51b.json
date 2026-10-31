@@ -1,0 +1,88 @@
+{
+  "source_type": "jd",
+  "source_file": "Google LLC - Data Scientist.pdf",
+  "company": "Google LLC",
+  "role": "Data Scientist",
+  "skills": [
+    {
+      "skill_name": "SQL writing and query optimization",
+      "category_code": "SQL",
+      "evidence": "Write efficient, production-grade SQL against very large datasets, including schema design and query optimization",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Database schema design for event or telemetry data",
+      "category_code": "SQL",
+      "evidence": "designing a schema for event or telemetry data",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "A/B test design and experiment interpretation",
+      "category_code": "AI",
+      "evidence": "Design and run experiments (A/B tests) and interpret their results rigorously",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Predictive model building and evaluation",
+      "category_code": "AI",
+      "evidence": "Build and evaluate predictive models, applying sound statistical judgment",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Foundational machine learning knowledge",
+      "category_code": "AI",
+      "evidence": "Foundational machine learning knowledge: bias-variance tradeoff, regression vs. classification, how gradient descent works, and how to recognize overfitting",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Quantitative and analytical reasoning",
+      "category_code": "APTI",
+      "evidence": "Solid quantitative and analytical reasoning — comfortable interpreting experiment results, probability, and metrics under ambiguity",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Communication of technical findings",
+      "category_code": "COMM",
+      "evidence": "Present findings clearly to both technical and non-technical stakeholders; explain complex model in plain language",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Cross-functional collaboration with engineering and product teams",
+      "category_code": "COMM",
+      "evidence": "Partner with engineering and product teams to turn analysis into shipped features",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "BI and data visualization",
+      "category_code": "OTHER",
+      "evidence": "Experience with a BI/visualization tool",
+      "confidence": "medium",
+      "importance": "preferred"
+    },
+    {
+      "skill_name": "Experimentation platform exposure",
+      "category_code": "OTHER",
+      "evidence": "Exposure to experimentation platforms",
+      "confidence": "low",
+      "importance": "preferred"
+    },
+    {
+      "skill_name": "Applied data science portfolio",
+      "category_code": "AI",
+      "evidence": "Portfolio of applied data projects",
+      "confidence": "medium",
+      "importance": "preferred"
+    }
+  ],
+  "extras": {
+    "source": "llm"
+  }
+}

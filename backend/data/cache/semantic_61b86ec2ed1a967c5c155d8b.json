@@ -1,0 +1,34 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Linux fundamentals (OS)",
+      "candidate_skill": "Linux basics (OS)",
+      "similarity": 0.85,
+      "reason": "Basic Linux knowledge covers foundational Linux OS skills."
+    },
+    {
+      "jd_skill": "Basic networking (NETW)",
+      "candidate_skill": "Networking fundamentals (NETW)",
+      "similarity": 0.9,
+      "reason": "Networking fundamentals directly satisfy basic networking requirements."
+    },
+    {
+      "jd_skill": "Communication (COMM)",
+      "candidate_skill": "Teamwork / coordination (COMM)",
+      "similarity": 0.7,
+      "reason": "Teamwork and coordination involve communication skills."
+    },
+    {
+      "jd_skill": "Incident triage and troubleshooting (SWE)",
+      "candidate_skill": "First-level troubleshooting (SWE)",
+      "similarity": 0.9,
+      "reason": "First-level troubleshooting is a direct match for incident triage and troubleshooting."
+    },
+    {
+      "jd_skill": "Ticketing and incident system exposure (OTHER)",
+      "candidate_skill": "Ticketing tools (OTHER)",
+      "similarity": 0.8,
+      "reason": "Ticketing tools experience relates to ticketing and incident system exposure."
+    }
+  ]
+}

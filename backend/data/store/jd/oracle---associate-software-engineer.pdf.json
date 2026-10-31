@@ -5,54 +5,91 @@
   "role": "Associate Software Engineer",
   "skills": [
     {
-      "skill_name": "Java",
+      "skill_name": "Programming fundamentals",
       "category_code": "COD",
-      "evidence": "Read and predict output of code, solve basic string/array manipulation problems",
+      "evidence": "Solid programming fundamentals — able to read and predict the output of code, and solve basic string/array manipulation problems confidently",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "SQL",
+      "skill_name": "SQL and relational database knowledge",
       "category_code": "SQL",
-      "evidence": "Correct SELECT/WHERE syntax, DELETE vs TRUNCATE, simple relational queries",
+      "evidence": "Practical SQL knowledge — correct SELECT/WHERE syntax, understanding of DELETE vs. TRUNCATE, and comfort writing simple queries against a relational schema",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Data Structures",
+      "skill_name": "Data structures and algorithms",
       "category_code": "DSA",
-      "evidence": "Arrays vs linked lists, when to use a stack or queue, basic algorithmic problem-solving",
+      "evidence": "Core data structures knowledge — arrays vs. linked lists, when to use a stack or a queue, and basic algorithmic problem-solving",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Object-Oriented Programming",
+      "skill_name": "Object-oriented programming",
       "category_code": "OOD",
-      "evidence": "Inheritance, polymorphism, abstract classes vs interfaces with real examples",
+      "evidence": "Object-oriented programming fundamentals — inheritance, polymorphism, abstract classes vs. interfaces, explained with real examples",
       "confidence": "high",
       "importance": "required"
     },
     {
-      "skill_name": "Operating Systems",
+      "skill_name": "Operating systems",
       "category_code": "OS",
-      "evidence": "Basic understanding of processes, threads, and filesystems",
+      "evidence": "Operating systems basics — what a process is, fundamentals of multithreading and memory management",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Quantitative aptitude",
+      "category_code": "APTI",
+      "evidence": "Strong quantitative aptitude — time-and-work, ratios, percentages, and logical/seating-arrangement style reasoning",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Communication and collaboration",
+      "category_code": "COMM",
+      "evidence": "Clear communication and a collaborative attitude — comfortable explaining your final-year project and working under deadline pressure",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Software development lifecycle and Agile",
+      "category_code": "SWE",
+      "evidence": "Awareness of the software development lifecycle and the difference between Agile and Waterfall, and why documentation matters",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Unit testing",
+      "category_code": "SWE",
+      "evidence": "Perform unit testing and collaborate closely with QA",
+      "confidence": "high",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Debugging",
+      "category_code": "SWE",
+      "evidence": "Write and debug code",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Technical documentation",
+      "category_code": "SWE",
+      "evidence": "Document your work clearly for future maintainers; why documentation matters",
+      "confidence": "medium",
+      "importance": "required"
+    },
+    {
+      "skill_name": "Banking and financial systems",
+      "category_code": "OTHER",
+      "evidence": "Enterprise-grade banking and financial services products such as FLEXCUBE and OBDX",
       "confidence": "medium",
       "importance": "preferred"
-    },
-    {
-      "skill_name": "Communication",
-      "category_code": "COMM",
-      "evidence": "Document work clearly for future maintainers, participate in Agile ceremonies",
-      "confidence": "high",
-      "importance": "required"
-    },
-    {
-      "skill_name": "Testing and CI",
-      "category_code": "SWE",
-      "evidence": "Unit testing, collaborating closely with QA, debugging code",
-      "confidence": "high",
-      "importance": "required"
     }
   ],
-  "extras": {}
+  "extras": {
+    "source": "llm"
+  }
 }

@@ -2,113 +2,98 @@
   "source_type": "resume",
   "source_file": "Rohan Verma.pdf",
   "company": null,
-  "role": null,
+  "role": "Software Engineer, Data Scientist, Backend Engineer",
   "skills": [
     {
       "skill_name": "C++",
       "category_code": "COD",
-      "evidence": "listed in technical skills",
+      "evidence": "Technical Skills: C++",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Python",
       "category_code": "COD",
-      "evidence": "open-source PRs to a Python library",
+      "evidence": "Technical Skills: Python; open-source contributor (2 merged PRs to a mid-size Python library)",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "SQL",
       "category_code": "SQL",
-      "evidence": "listed in technical skills",
-      "confidence": "medium",
+      "evidence": "Technical Skills: SQL",
+      "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Data Structures & Algorithms",
       "category_code": "DSA",
-      "evidence": "500+ competitive programming problems",
+      "evidence": "Technical Skills: Data Structures & Algorithms; Achievements: 500+ problems solved across competitive programming platforms",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "System Design",
       "category_code": "SYSD",
-      "evidence": "scalable pub-sub notification service with architecture diagrams",
+      "evidence": "Designed and built a scalable notification service (pub-sub architecture, horizontally-scalable workers) as a personal system-design project, documented with architecture diagrams",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Object-Oriented Design",
       "category_code": "OOD",
-      "evidence": "technical blog series on OO design patterns",
+      "evidence": "Wrote a technical blog series on object-oriented design patterns used in real-world systems",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Operating Systems",
       "category_code": "OS",
-      "evidence": "listed in technical skills",
+      "evidence": "Technical Skills: Operating Systems",
       "confidence": "medium",
       "importance": null
     },
     {
-      "skill_name": "Machine learning (collaborative filtering)",
+      "skill_name": "basic Machine Learning",
       "category_code": "AI",
-      "evidence": "recommendation engine evaluated with precision/recall",
+      "evidence": "Technical Skills: basic Machine Learning; Built a recommendation engine using collaborative filtering on a movie-ratings dataset, evaluated with precision/recall",
       "confidence": "medium",
       "importance": null
     },
     {
       "skill_name": "Git",
       "category_code": "SWE",
-      "evidence": "open-source contributor, 2 merged PRs",
-      "confidence": "high",
-      "importance": null
-    },
-    {
-      "skill_name": "Testing and CI",
-      "category_code": "SWE",
-      "evidence": "shipped a feature end-to-end with tests and CI at internship",
+      "evidence": "Technical Skills: Git; Software Engineering intern at a Series-B startup — shipped a feature end-to-end including tests and CI",
       "confidence": "high",
       "importance": null
     },
     {
       "skill_name": "Docker",
       "category_code": "CLOUD",
-      "evidence": "listed in technical skills",
-      "confidence": "medium",
-      "importance": null
-    },
-    {
-      "skill_name": "Technical writing",
-      "category_code": "COMM",
-      "evidence": "technical blog series",
-      "confidence": "medium",
+      "evidence": "Technical Skills: Docker",
+      "confidence": "high",
       "importance": null
     }
   ],
   "extras": {
     "name": "Rohan Verma",
-    "email": null,
-    "education": "B.Tech CSE, Class of 2026, CGPA 9.1",
+    "education": "B.Tech, Computer Science and Engineering, Class of 2026 — CGPA 9.1 / 10",
     "experience": [
       {
-        "title": "Software Engineering intern",
-        "organization": "Series-B startup",
-        "description": "shipped a feature end-to-end with tests and CI",
+        "title": "Software Engineering Intern",
+        "organization": "Series-B Startup",
+        "description": "Shipped a feature end-to-end including tests and CI",
         "year": null
       }
     ],
     "hackathons": [
       {
-        "title": "Winner, national inter-college hackathon",
+        "title": "National Inter-College Hackathon",
         "organization": null,
-        "description": "real-time collaborative document editor",
+        "description": "Built a real-time collaborative document editor",
         "year": null
       }
     ],
-    "certifications": []
+    "source": "llm"
   }
 }

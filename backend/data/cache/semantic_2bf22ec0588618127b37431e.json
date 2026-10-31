@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "General Coding Ability (COD)",
+      "candidate_skill": "Python (COD)",
+      "similarity": 0.7,
+      "reason": "Python is a general-purpose programming language that demonstrates core coding ability, though the job skill is broader."
+    }
+  ]
+}

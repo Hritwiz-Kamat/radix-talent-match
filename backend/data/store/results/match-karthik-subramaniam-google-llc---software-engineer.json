@@ -1,0 +1,105 @@
+{
+  "jd_source_file": "Google LLC - Software Engineer.pdf",
+  "candidate_id": "karthik-subramaniam",
+  "match_score": 7,
+  "matched_skills": [
+    {
+      "jd_skill": "Communication",
+      "candidate_skill": "Communication",
+      "match_type": "exact",
+      "similarity": 1.0
+    }
+  ],
+  "missing_skills": [
+    {
+      "skill_name": "Data Structures and Algorithms",
+      "category_code": "DSA",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Data Structures and Algorithms."
+    },
+    {
+      "skill_name": "General Coding Ability",
+      "category_code": "COD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using General Coding Ability."
+    },
+    {
+      "skill_name": "Object-Oriented Design",
+      "category_code": "OOD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Object-Oriented Design."
+    },
+    {
+      "skill_name": "Collaboration and Teamwork",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Collaboration and Teamwork."
+    },
+    {
+      "skill_name": "CI/CD",
+      "category_code": "CLOUD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using CI/CD."
+    },
+    {
+      "skill_name": "Backend Services and APIs",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Backend Services and APIs."
+    },
+    {
+      "skill_name": "Code Quality and Code Review",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Code Quality and Code Review."
+    },
+    {
+      "skill_name": "Performance and Reliability Troubleshooting",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Performance and Reliability Troubleshooting."
+    },
+    {
+      "skill_name": "Technical Debt Awareness",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Technical Debt Awareness."
+    },
+    {
+      "skill_name": "Testing Strategy",
+      "category_code": "SWE",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Testing Strategy."
+    },
+    {
+      "skill_name": "System Design and Distributed Systems",
+      "category_code": "SYSD",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using System Design and Distributed Systems."
+    },
+    {
+      "skill_name": "Networking",
+      "category_code": "NETW",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Networking."
+    },
+    {
+      "skill_name": "Operating Systems",
+      "category_code": "OS",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Operating Systems."
+    },
+    {
+      "skill_name": "Open-Source Contributions",
+      "category_code": "SWE",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Open-Source Contributions."
+    },
+    {
+      "skill_name": "Production Distributed Systems Exposure",
+      "category_code": "SYSD",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Production Distributed Systems Exposure."
+    }
+  ]
+}

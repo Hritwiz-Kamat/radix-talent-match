@@ -1,0 +1,100 @@
+{
+  "source_type": "resume",
+  "source_file": "Priya Menon.pdf",
+  "company": null,
+  "role": "Application Support Analyst, Associate Software Engineer",
+  "skills": [
+    {
+      "skill_name": "SQL (basic)",
+      "category_code": "SQL",
+      "evidence": "SQL (basic)",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Java",
+      "category_code": "COD",
+      "evidence": "Built a simple student attendance tracker using Java and a MySQL backend",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "MySQL",
+      "category_code": "SQL",
+      "evidence": "MySQL backend",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Linux basics",
+      "category_code": "OS",
+      "evidence": "Linux basics",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Networking fundamentals",
+      "category_code": "NETW",
+      "evidence": "Networking fundamentals",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "MS Excel",
+      "category_code": "OTHER",
+      "evidence": "MS Excel",
+      "confidence": "high",
+      "importance": null
+    },
+    {
+      "skill_name": "Ticketing tools",
+      "category_code": "OTHER",
+      "evidence": "exposure to ticketing tools",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "First-level troubleshooting",
+      "category_code": "SWE",
+      "evidence": "handled first-level troubleshooting and escalations",
+      "confidence": "medium",
+      "importance": null
+    },
+    {
+      "skill_name": "Teamwork / coordination",
+      "category_code": "COMM",
+      "evidence": "Volunteer coordinator for a college technical fest, coordinating logistics across teams",
+      "confidence": "high",
+      "importance": null
+    }
+  ],
+  "extras": {
+    "name": "Priya Menon",
+    "education": "B.Tech, Information Technology, Class of 2026 — CGPA 7.4 / 10",
+    "experience": [
+      {
+        "title": "Summer Intern, IT Support Desk",
+        "organization": "Local business",
+        "description": "Handled first-level troubleshooting and escalations",
+        "year": null
+      }
+    ],
+    "hackathons": [
+      {
+        "title": "12-hour campus hackathon",
+        "organization": null,
+        "description": "Participated (non-finalist)",
+        "year": null
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Cisco Networking Basics",
+        "organization": "Cisco",
+        "description": "Online course",
+        "year": null
+      }
+    ],
+    "source": "llm"
+  }
+}

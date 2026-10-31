@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Foundational machine learning knowledge (AI)",
+      "candidate_skill": "basic Machine Learning (AI)",
+      "similarity": 0.65,
+      "reason": "Candidate basic ML covers introductory concepts aligned with foundational ML knowledge, though with limited depth."
+    }
+  ]
+}

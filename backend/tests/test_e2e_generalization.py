@@ -3,6 +3,7 @@ End-to-End Generalization Test for RADIX Talent Match.
 
 Verifies the complete five-module workflow for a completely unseen candidate
 and a synthetic custom Job Description without relying on predefined fixtures.
+Uses a temporary storage directory so tests never mutate backend/data/store or backend/data/cache.
 
 Flow:
   1. JD Upload & Analysis -> /api/jd-analytics/upload
@@ -14,72 +15,55 @@ Flow:
 """
 import io
 import os
+import shutil
+from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
 os.environ["STORAGE_BACKEND"] = "local"
 
-from app.core import storage
+from app.core import storage, extract
 from app.main import app
 from app.schemas import CandidateProfile, ExtractedSkillList, SkillMatchResult, TalentCheckResult
 
+FIXTURES_DIR = Path(__file__).parent / "fixtures"
+
 
 @pytest.fixture
-def client(monkeypatch):
+def client(monkeypatch, tmp_path):
     monkeypatch.setenv("STORAGE_BACKEND", "local")
     monkeypatch.setenv("OPENROUTER_API_KEY", "")
-    from app.core import storage
+    from app.core import storage, extract
     monkeypatch.setattr(storage, "supabase_enabled", lambda: False)
+
+    # Isolate storage in temporary directory
+    temp_store = tmp_path / "store"
+    if storage.ROOT.exists():
+        shutil.copytree(storage.ROOT, temp_store)
+    else:
+        temp_store.mkdir(parents=True)
+    monkeypatch.setattr(storage, "ROOT", temp_store)
+
+    # Isolate cache in temporary directory
+    temp_cache = tmp_path / "cache"
+    temp_cache.mkdir(parents=True, exist_ok=True)
+    monkeypatch.setattr(extract, "CACHE_DIR", temp_cache)
+
     return TestClient(app)
 
 
-SYNTHETIC_JD_TEXT = """Job Title: Systems & Cloud Architect
-Company: Apex Cloud Labs
-Overview:
-We are looking for a Systems & Cloud Architect to lead our distributed infrastructure.
-
-Required Skills:
-- Strong proficiency in Rust or Go required for low-latency engine development.
-- Deep expertise in Distributed Systems and System Design required.
-- Hands-on experience with Docker and Kubernetes required.
-- Proficiency in PostgreSQL and SQL database management required.
-- Strong problem solving and data structures knowledge required.
-
-Preferred Skills:
-- Experience with C++ and Linux kernel concepts preferred.
-- Familiarity with Machine Learning pipelines preferred.
-"""
-
-SYNTHETIC_RESUME_TEXT = """ELENA ROSTOVA
-elena.rostova@techmail.io | +1 555 019 2834 | Seattle, WA
-LinkedIn: https://linkedin.com/in/elena-rostova | GitHub: https://github.com/erostova
-
-PROFESSIONAL SUMMARY
-Systems and Cloud Engineer with deep expertise in distributed backends, high-throughput microservices, and Kubernetes infrastructure.
-
-EDUCATION
-Master of Science in Computer Science, University of Washington, 2022
-
-TECHNICAL COMPETENCIES
-Languages: Rust, Go, Python
-Cloud & DevOps: Docker, Kubernetes, AWS, CI/CD
-Databases: PostgreSQL, Redis, SQL
-Architecture: Distributed Systems, System Design, Microservices, Data Structures, Algorithms
-
-PROFESSIONAL EXPERIENCE
-Senior Backend Engineer | CloudScale Inc. (2022 - Present)
-- Designed distributed data processing engine in Rust and Go handling 100k requests/second.
-- Deployed containerized microservices to Kubernetes clusters on AWS with automated CI/CD.
-- Optimized PostgreSQL database schema and complex analytical queries.
-"""
-
-
 def test_full_workflow_unseen_candidate_and_custom_jd(client):
+    synthetic_jd_path = FIXTURES_DIR / "synthetic_apex_jd.txt"
+    synthetic_resume_path = FIXTURES_DIR / "synthetic_elena_resume.txt"
+
+    synthetic_jd_text = synthetic_jd_path.read_text(encoding="utf-8")
+    synthetic_resume_text = synthetic_resume_path.read_text(encoding="utf-8")
+
     # -------------------------------------------------------------------------
     # Step 1: Upload and Analyze a brand new Job Description
     # -------------------------------------------------------------------------
     jd_filename = "Apex_Cloud_Labs_Architect.txt"
-    jd_bytes = io.BytesIO(SYNTHETIC_JD_TEXT.encode("utf-8"))
+    jd_bytes = io.BytesIO(synthetic_jd_text.encode("utf-8"))
     files = {"file": (jd_filename, jd_bytes, "text/plain")}
 
     jd_res = client.post("/api/jd-analytics/upload", files=files)
@@ -103,7 +87,7 @@ def test_full_workflow_unseen_candidate_and_custom_jd(client):
     # Step 2: Upload and Parse an unseen Candidate Resume
     # -------------------------------------------------------------------------
     resume_filename = "Elena_Rostova_Resume.txt"
-    resume_bytes = io.BytesIO(SYNTHETIC_RESUME_TEXT.encode("utf-8"))
+    resume_bytes = io.BytesIO(synthetic_resume_text.encode("utf-8"))
     res_files = {"file": (resume_filename, resume_bytes, "text/plain")}
 
     resume_res = client.post("/api/resume/parse", files=res_files)
@@ -193,7 +177,7 @@ def test_full_workflow_unseen_candidate_and_custom_jd(client):
     assert entry is not None, "Match result was not recorded in matrix!"
     assert entry["match_score"] == match_result.match_score
 
-    # Verify stored document
+    # Verify stored document in temp storage
     stored = storage.load("results", f"match-elena-rostova-{jd_filename}")
     assert stored is not None
     assert stored["match_score"] == match_result.match_score

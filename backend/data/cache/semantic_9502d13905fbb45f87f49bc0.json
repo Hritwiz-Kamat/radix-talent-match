@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Coding Skills (COD)",
+      "candidate_skill": "Python (COD)",
+      "similarity": 0.85,
+      "reason": "Python is a general-purpose programming language that directly satisfies coding skill requirements."
+    }
+  ]
+}

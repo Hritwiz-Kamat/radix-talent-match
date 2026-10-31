@@ -1,0 +1,63 @@
+{
+  "jd_source_file": "Microsoft - Data Analyst.pdf",
+  "candidate_id": "karthik-subramaniam",
+  "match_score": 35,
+  "matched_skills": [
+    {
+      "jd_skill": "SQL query writing and optimization",
+      "candidate_skill": "SQL",
+      "match_type": "fuzzy",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "Applied statistics and machine learning literacy",
+      "candidate_skill": "Statistics",
+      "match_type": "fuzzy",
+      "similarity": 1.0
+    },
+    {
+      "jd_skill": "Stakeholder communication and decision translation",
+      "candidate_skill": "Communication",
+      "match_type": "fuzzy",
+      "similarity": 1.0
+    }
+  ],
+  "missing_skills": [
+    {
+      "skill_name": "Anomaly detection and metric explanation",
+      "category_code": "DSA",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Anomaly detection and metric explanation."
+    },
+    {
+      "skill_name": "Quantitative reasoning",
+      "category_code": "APTI",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Quantitative reasoning."
+    },
+    {
+      "skill_name": "Handling ambiguous requirements",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Handling ambiguous requirements."
+    },
+    {
+      "skill_name": "Database schema design and normalization strategy",
+      "category_code": "SQL",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Database schema design and normalization strategy."
+    },
+    {
+      "skill_name": "Dashboard design and reporting",
+      "category_code": "OTHER",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Dashboard design and reporting."
+    },
+    {
+      "skill_name": "Data visualization tool experience",
+      "category_code": "OTHER",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Data visualization tool experience."
+    }
+  ]
+}

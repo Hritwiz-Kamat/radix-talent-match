@@ -1,0 +1,10 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Object-oriented programming (OOD)",
+      "candidate_skill": "Object-Oriented Design (OOD)",
+      "similarity": 0.8,
+      "reason": "Both focus on object-oriented principles; design demonstrates OOP implementation knowledge."
+    }
+  ]
+}

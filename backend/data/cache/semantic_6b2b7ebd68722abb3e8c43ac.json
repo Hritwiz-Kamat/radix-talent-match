@@ -1,0 +1,16 @@
+{
+  "matches": [
+    {
+      "jd_skill": "Coding Skills (COD)",
+      "candidate_skill": "Java (COD)",
+      "similarity": 0.85,
+      "reason": "Java is a concrete coding skill that satisfies general coding requirements."
+    },
+    {
+      "jd_skill": "Operating Systems (OS)",
+      "candidate_skill": "Linux basics (OS)",
+      "similarity": 0.6,
+      "reason": "Linux basics relate to operating systems but only at a basic level."
+    }
+  ]
+}

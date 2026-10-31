@@ -1,0 +1,62 @@
+{
+  "jd_source_file": "Microsoft - Data Analyst.pdf",
+  "candidate_id": "ananya-rao",
+  "match_score": 0,
+  "matched_skills": [],
+  "missing_skills": [
+    {
+      "skill_name": "Anomaly detection and metric explanation",
+      "category_code": "DSA",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Anomaly detection and metric explanation."
+    },
+    {
+      "skill_name": "Quantitative reasoning",
+      "category_code": "APTI",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Quantitative reasoning."
+    },
+    {
+      "skill_name": "Handling ambiguous requirements",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Handling ambiguous requirements."
+    },
+    {
+      "skill_name": "Stakeholder communication and decision translation",
+      "category_code": "COMM",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Stakeholder communication and decision translation."
+    },
+    {
+      "skill_name": "Applied statistics and machine learning literacy",
+      "category_code": "AI",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Applied statistics and machine learning literacy."
+    },
+    {
+      "skill_name": "Database schema design and normalization strategy",
+      "category_code": "SQL",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Database schema design and normalization strategy."
+    },
+    {
+      "skill_name": "SQL query writing and optimization",
+      "category_code": "SQL",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using SQL query writing and optimization."
+    },
+    {
+      "skill_name": "Dashboard design and reporting",
+      "category_code": "OTHER",
+      "importance": "required",
+      "suggestion": "Build a small project or complete targeted exercises using Dashboard design and reporting."
+    },
+    {
+      "skill_name": "Data visualization tool experience",
+      "category_code": "OTHER",
+      "importance": "preferred",
+      "suggestion": "Build a small project or complete targeted exercises using Data visualization tool experience."
+    }
+  ]
+}
